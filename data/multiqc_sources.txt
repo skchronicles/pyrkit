@@ -1,0 +1,801 @@
+Module	Section	Sample Name	Source
+QualiMap	genome_results	WT_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_4_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_4_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_2_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_2_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_3_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_3_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_3_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_1_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F6_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_2_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F6_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_2_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_3_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_4_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_2_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_2_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_1_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_1_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_3_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F6_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_4_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_2_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_1_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_2_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F6_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_3_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_1_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_4_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F6_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_4_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_3_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_3_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_3_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F6_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_3_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_4_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F6_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_1_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_1_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_4_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_1_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_2_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F6_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_1_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_1_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_2_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	F9_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_4_MP192.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+QualiMap	genome_results	WT_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_4_MP180.p2.Aligned.sortedByCoord.out_stats/genome_results.txt
+Rsem	all_sections	F9_MOCK_4_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_MOCK_4_MP192.RSEM.stat/F9_MOCK_4_MP192.RSEM.cnt
+Rsem	all_sections	WT_MOCK_1_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_MOCK_1_MP180.RSEM.stat/WT_MOCK_1_MP180.RSEM.cnt
+Rsem	all_sections	F9_RAS_4_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_RAS_4_MP180.RSEM.stat/F9_RAS_4_MP180.RSEM.cnt
+Rsem	all_sections	F6_MOCK_3_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F6_MOCK_3_MP180.RSEM.stat/F6_MOCK_3_MP180.RSEM.cnt
+Rsem	all_sections	F9_MOCK_1_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_MOCK_1_MP180.RSEM.stat/F9_MOCK_1_MP180.RSEM.cnt
+Rsem	all_sections	F9_MOCK_2_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_MOCK_2_MP192.RSEM.stat/F9_MOCK_2_MP192.RSEM.cnt
+Rsem	all_sections	WT_MOCK_2_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_MOCK_2_MP180.RSEM.stat/WT_MOCK_2_MP180.RSEM.cnt
+Rsem	all_sections	F6_RAS_1_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F6_RAS_1_MP180.RSEM.stat/F6_RAS_1_MP180.RSEM.cnt
+Rsem	all_sections	WT_MOCK_3_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_MOCK_3_MP192.RSEM.stat/WT_MOCK_3_MP192.RSEM.cnt
+Rsem	all_sections	WT_MOCK_4_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_MOCK_4_MP192.RSEM.stat/WT_MOCK_4_MP192.RSEM.cnt
+Rsem	all_sections	F6_MOCK_4_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F6_MOCK_4_MP180.RSEM.stat/F6_MOCK_4_MP180.RSEM.cnt
+Rsem	all_sections	F6_RAS_3_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F6_RAS_3_MP180.RSEM.stat/F6_RAS_3_MP180.RSEM.cnt
+Rsem	all_sections	WT_RAS_4_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_RAS_4_MP192.RSEM.stat/WT_RAS_4_MP192.RSEM.cnt
+Rsem	all_sections	F6_RAS_4_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F6_RAS_4_MP180.RSEM.stat/F6_RAS_4_MP180.RSEM.cnt
+Rsem	all_sections	WT_RAS_3_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_RAS_3_MP180.RSEM.stat/WT_RAS_3_MP180.RSEM.cnt
+Rsem	all_sections	F9_RAS_3_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_RAS_3_MP180.RSEM.stat/F9_RAS_3_MP180.RSEM.cnt
+Rsem	all_sections	F6_MOCK_1_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F6_MOCK_1_MP180.RSEM.stat/F6_MOCK_1_MP180.RSEM.cnt
+Rsem	all_sections	F9_MOCK_4_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_MOCK_4_MP180.RSEM.stat/F9_MOCK_4_MP180.RSEM.cnt
+Rsem	all_sections	WT_MOCK_2_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_MOCK_2_MP192.RSEM.stat/WT_MOCK_2_MP192.RSEM.cnt
+Rsem	all_sections	F9_RAS_1_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_RAS_1_MP180.RSEM.stat/F9_RAS_1_MP180.RSEM.cnt
+Rsem	all_sections	F9_MOCK_2_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_MOCK_2_MP180.RSEM.stat/F9_MOCK_2_MP180.RSEM.cnt
+Rsem	all_sections	WT_RAS_1_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_RAS_1_MP192.RSEM.stat/WT_RAS_1_MP192.RSEM.cnt
+Rsem	all_sections	WT_RAS_1_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_RAS_1_MP180.RSEM.stat/WT_RAS_1_MP180.RSEM.cnt
+Rsem	all_sections	F9_RAS_2_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_RAS_2_MP192.RSEM.stat/F9_RAS_2_MP192.RSEM.cnt
+Rsem	all_sections	WT_RAS_2_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_RAS_2_MP192.RSEM.stat/WT_RAS_2_MP192.RSEM.cnt
+Rsem	all_sections	F9_RAS_3_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_RAS_3_MP192.RSEM.stat/F9_RAS_3_MP192.RSEM.cnt
+Rsem	all_sections	WT_RAS_3_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_RAS_3_MP192.RSEM.stat/WT_RAS_3_MP192.RSEM.cnt
+Rsem	all_sections	F9_MOCK_1_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_MOCK_1_MP192.RSEM.stat/F9_MOCK_1_MP192.RSEM.cnt
+Rsem	all_sections	F6_MOCK_2_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F6_MOCK_2_MP180.RSEM.stat/F6_MOCK_2_MP180.RSEM.cnt
+Rsem	all_sections	F9_MOCK_3_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_MOCK_3_MP180.RSEM.stat/F9_MOCK_3_MP180.RSEM.cnt
+Rsem	all_sections	F6_RAS_2_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F6_RAS_2_MP180.RSEM.stat/F6_RAS_2_MP180.RSEM.cnt
+Rsem	all_sections	WT_RAS_4_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_RAS_4_MP180.RSEM.stat/WT_RAS_4_MP180.RSEM.cnt
+Rsem	all_sections	WT_RAS_2_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_RAS_2_MP180.RSEM.stat/WT_RAS_2_MP180.RSEM.cnt
+Rsem	all_sections	WT_MOCK_4_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_MOCK_4_MP180.RSEM.stat/WT_MOCK_4_MP180.RSEM.cnt
+Rsem	all_sections	F9_MOCK_3_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_MOCK_3_MP192.RSEM.stat/F9_MOCK_3_MP192.RSEM.cnt
+Rsem	all_sections	F9_RAS_4_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_RAS_4_MP192.RSEM.stat/F9_RAS_4_MP192.RSEM.cnt
+Rsem	all_sections	F9_RAS_1_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_RAS_1_MP192.RSEM.stat/F9_RAS_1_MP192.RSEM.cnt
+Rsem	all_sections	WT_MOCK_1_MP192.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_MOCK_1_MP192.RSEM.stat/WT_MOCK_1_MP192.RSEM.cnt
+Rsem	all_sections	F9_RAS_2_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/F9_RAS_2_MP180.RSEM.stat/F9_RAS_2_MP180.RSEM.cnt
+Rsem	all_sections	WT_MOCK_3_MP180.RSEM	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/DEG_ALL/WT_MOCK_3_MP180.RSEM.stat/WT_MOCK_3_MP180.RSEM.cnt
+RSeQC	read_distribution	output.F9_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_3_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_4_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F6_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_1_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_1_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F6_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_2_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_4_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_1_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_2_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_4_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_2_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F6_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_3_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_3_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F6_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F6_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_3_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F6_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_4_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F6_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_2_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_4_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_2_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_1_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_1_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_3_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F9_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.F6_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	read_distribution	output.WT_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.read_distribution.txt
+RSeQC	inner_distance	output.F6_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F6_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_2_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_1_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F6_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_3_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_2_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_3_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_3_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_4_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F6_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_1_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_3_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F6_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_4_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_2_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F6_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_3_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_1_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F6_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_4_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_2_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_1_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F6_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_2_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_1_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.F9_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_4_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_4_MP192.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	inner_distance	output.WT_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt
+RSeQC	read_GC	output.WT_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F6_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_2_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F6_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F6_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_1_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_4_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_4_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_3_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F6_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_3_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_1_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_2_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F6_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_1_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F6_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_4_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_1_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_4_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F6_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_2_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_4_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_2_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_3_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_3_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_1_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F6_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.WT_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_2_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_3_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	read_GC	output.F9_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.GC.xls
+RSeQC	junction_annotation	slurm-61781598	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781598.out
+RSeQC	junction_annotation	slurm-61781630	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781630.out
+RSeQC	junction_annotation	slurm-61781628	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781628.out
+RSeQC	junction_annotation	slurm-61781596	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781596.out
+RSeQC	junction_annotation	slurm-61781618	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781618.out
+RSeQC	junction_annotation	slurm-61781616	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781616.out
+RSeQC	junction_annotation	slurm-61781600	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781600.out
+RSeQC	junction_annotation	slurm-61781626	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781626.out
+RSeQC	junction_annotation	slurm-61781612	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781612.out
+RSeQC	junction_annotation	slurm-61781622	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781622.out
+RSeQC	junction_annotation	slurm-61781594	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781594.out
+RSeQC	junction_annotation	slurm-61781620	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781620.out
+RSeQC	junction_annotation	slurm-61781650	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781650.out
+RSeQC	junction_annotation	slurm-61781633	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781633.out
+RSeQC	junction_annotation	slurm-61781639	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781639.out
+RSeQC	junction_annotation	slurm-61781514	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781514.out
+RSeQC	junction_annotation	slurm-61781585	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781585.out
+RSeQC	junction_annotation	slurm-61781642	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781642.out
+RSeQC	junction_annotation	slurm-61781582	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781582.out
+RSeQC	junction_annotation	slurm-61781608	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781608.out
+RSeQC	junction_annotation	slurm-61781634	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781634.out
+RSeQC	junction_annotation	slurm-61781655	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781655.out
+RSeQC	junction_annotation	slurm-61781610	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781610.out
+RSeQC	junction_annotation	slurm-61781510	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781510.out
+RSeQC	junction_annotation	slurm-61781591	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781591.out
+RSeQC	junction_annotation	slurm-61781602	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781602.out
+RSeQC	junction_annotation	slurm-61781604	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781604.out
+RSeQC	junction_annotation	slurm-61781588	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781588.out
+RSeQC	junction_annotation	slurm-61781653	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781653.out
+RSeQC	junction_annotation	slurm-61781659	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781659.out
+RSeQC	junction_annotation	slurm-61781614	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781614.out
+RSeQC	junction_annotation	slurm-61781657	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781657.out
+RSeQC	junction_annotation	slurm-61781644	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781644.out
+RSeQC	junction_annotation	slurm-61781648	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781648.out
+RSeQC	junction_annotation	slurm-61781646	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781646.out
+RSeQC	junction_annotation	slurm-61781512	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781512.out
+RSeQC	junction_annotation	slurm-61781636	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781636.out
+RSeQC	junction_annotation	slurm-61781606	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781606.out
+RSeQC	junction_annotation	slurm-61781624	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781624.out
+RSeQC	junction_annotation	slurm-61781662	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61781662.out
+RSeQC	junction_saturation	output.F9_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_1_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F6_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_3_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_4_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_1_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_4_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_3_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_1_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_3_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F6_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_3_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_2_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_3_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_2_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_4_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_1_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_2_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F6_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_4_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F6_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_2_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_2_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F6_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_1_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F6_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F6_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.WT_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_4_MP192.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F9_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	junction_saturation	output.F6_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.junctionSaturation_plot.r
+RSeQC	infer_experiment	output.WT_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_1_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_2_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F6_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_1_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F6_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_3_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_4_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F6_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_3_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_1_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_1_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F6_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_4_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_2_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_2_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_3_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_3_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F6_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_3_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_2_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_4_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F6_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F6_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_2_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F6_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_4_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.F9_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_4_MP192.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+RSeQC	infer_experiment	output.WT_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_1_MP180.p2.Aligned.sortedByCoord.out.infer_experiment.txt
+Picard	DuplicationMetrics	WT_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_3_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F6_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_2_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F6_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_3_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_1_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F6_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_4_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_4_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F6_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F6_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_4_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_3_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_1_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F6_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_1_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_2_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F6_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F6_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_2_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_4_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_2_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_1_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_2_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_3_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_3_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_1_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	WT_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	DuplicationMetrics	F9_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_4_MP192.p2.Aligned.sortedByCoord.out.star.duplic
+Picard	RnaSeqMetrics	F9_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_1_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_3_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_2_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_1_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F6_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_3_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F6_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F6_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F6_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_2_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_3_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_4_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F6_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F6_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_4_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_2_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_4_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_2_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_4_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F6_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_3_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_4_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_3_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F6_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_1_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_1_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_1_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	F9_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Picard	RnaSeqMetrics	WT_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_2_MP180.p2.Aligned.sortedByCoord.out.RnaSeqMetrics.txt
+Samtools	flagstat	output.WT_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_3_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_3_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_1_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_4_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F6_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_2_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F6_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_1_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_4_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_4_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_4_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F6_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_4_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_2_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_2_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F6_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_2_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_1_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_3_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F6_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_1_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F6_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_RAS_3_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_2_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F6_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_4_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_RAS_3_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_4_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F6_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F6_MOCK_1_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_1_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_1_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_3_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_MOCK_3_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.F9_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.F9_MOCK_2_MP192.p2.Aligned.sortedByCoord.out.flagstat.txt
+Samtools	flagstat	output.WT_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/output.WT_RAS_2_MP180.p2.Aligned.sortedByCoord.out.flagstat.txt
+STAR	SummaryLog	F9_MOCK_4_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_4_MP192.Log.final.out
+STAR	SummaryLog	WT_RAS_4_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_4_MP192.Log.final.out
+STAR	SummaryLog	WT_MOCK_2_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_2_MP180.Log.final.out
+STAR	SummaryLog	WT_RAS_1_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_1_MP180.Log.final.out
+STAR	SummaryLog	F9_RAS_3_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_3_MP192.Log.final.out
+STAR	SummaryLog	F9_RAS_1_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_1_MP180.Log.final.out
+STAR	SummaryLog	WT_MOCK_1_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_1_MP192.Log.final.out
+STAR	SummaryLog	F6_MOCK_3_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_3_MP180.Log.final.out
+STAR	SummaryLog	WT_MOCK_1_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_1_MP180.Log.final.out
+STAR	SummaryLog	WT_RAS_2_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_2_MP180.Log.final.out
+STAR	SummaryLog	F6_MOCK_4_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_4_MP180.Log.final.out
+STAR	SummaryLog	F9_MOCK_4_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_4_MP180.Log.final.out
+STAR	SummaryLog	F9_MOCK_3_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_3_MP192.Log.final.out
+STAR	SummaryLog	WT_MOCK_3_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_3_MP192.Log.final.out
+STAR	SummaryLog	F6_RAS_1_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_1_MP180.Log.final.out
+STAR	SummaryLog	F9_MOCK_2_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_2_MP192.Log.final.out
+STAR	SummaryLog	F9_MOCK_1_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_1_MP192.Log.final.out
+STAR	SummaryLog	F9_RAS_2_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_2_MP192.Log.final.out
+STAR	SummaryLog	WT_MOCK_2_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_2_MP192.Log.final.out
+STAR	SummaryLog	WT_RAS_2_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_2_MP192.Log.final.out
+STAR	SummaryLog	F6_RAS_2_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_2_MP180.Log.final.out
+STAR	SummaryLog	F9_RAS_2_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_2_MP180.Log.final.out
+STAR	SummaryLog	F6_MOCK_1_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_1_MP180.Log.final.out
+STAR	SummaryLog	F9_RAS_4_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_4_MP180.Log.final.out
+STAR	SummaryLog	F6_RAS_4_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_4_MP180.Log.final.out
+STAR	SummaryLog	F9_RAS_1_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_1_MP192.Log.final.out
+STAR	SummaryLog	F9_RAS_4_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_4_MP192.Log.final.out
+STAR	SummaryLog	WT_RAS_3_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_3_MP180.Log.final.out
+STAR	SummaryLog	WT_RAS_1_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_1_MP192.Log.final.out
+STAR	SummaryLog	WT_MOCK_4_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_4_MP192.Log.final.out
+STAR	SummaryLog	F6_MOCK_2_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_2_MP180.Log.final.out
+STAR	SummaryLog	WT_MOCK_4_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_4_MP180.Log.final.out
+STAR	SummaryLog	F9_MOCK_3_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_3_MP180.Log.final.out
+STAR	SummaryLog	F9_MOCK_2_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_2_MP180.Log.final.out
+STAR	SummaryLog	F9_MOCK_1_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_1_MP180.Log.final.out
+STAR	SummaryLog	WT_RAS_4_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_4_MP180.Log.final.out
+STAR	SummaryLog	F9_RAS_3_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_3_MP180.Log.final.out
+STAR	SummaryLog	WT_RAS_3_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_3_MP192.Log.final.out
+STAR	SummaryLog	F6_RAS_3_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_3_MP180.Log.final.out
+STAR	SummaryLog	WT_MOCK_3_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_3_MP180.Log.final.out
+STAR	SummaryLog	F6_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F6_MOCK_2_MP180.p2.Log.final.out
+STAR	SummaryLog	F6_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F6_MOCK_3_MP180.p2.Log.final.out
+STAR	SummaryLog	F6_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F6_MOCK_4_MP180.p2.Log.final.out
+STAR	SummaryLog	WT_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_RAS_3_MP180.p2.Log.final.out
+STAR	SummaryLog	F9_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_RAS_1_MP192.p2.Log.final.out
+STAR	SummaryLog	F6_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F6_RAS_2_MP180.p2.Log.final.out
+STAR	SummaryLog	WT_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_MOCK_3_MP192.p2.Log.final.out
+STAR	SummaryLog	F6_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F6_MOCK_1_MP180.p2.Log.final.out
+STAR	SummaryLog	WT_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_MOCK_2_MP192.p2.Log.final.out
+STAR	SummaryLog	F9_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_MOCK_4_MP180.p2.Log.final.out
+STAR	SummaryLog	WT_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_RAS_4_MP180.p2.Log.final.out
+STAR	SummaryLog	F6_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F6_RAS_4_MP180.p2.Log.final.out
+STAR	SummaryLog	WT_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_MOCK_2_MP180.p2.Log.final.out
+STAR	SummaryLog	F9_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_MOCK_1_MP192.p2.Log.final.out
+STAR	SummaryLog	F9_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_RAS_4_MP180.p2.Log.final.out
+STAR	SummaryLog	F9_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_MOCK_3_MP192.p2.Log.final.out
+STAR	SummaryLog	WT_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_MOCK_1_MP192.p2.Log.final.out
+STAR	SummaryLog	WT_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_RAS_4_MP192.p2.Log.final.out
+STAR	SummaryLog	F9_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_RAS_3_MP180.p2.Log.final.out
+STAR	SummaryLog	F9_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_MOCK_4_MP192.p2.Log.final.out
+STAR	SummaryLog	F6_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F6_RAS_1_MP180.p2.Log.final.out
+STAR	SummaryLog	F9_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_MOCK_3_MP180.p2.Log.final.out
+STAR	SummaryLog	F9_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_RAS_1_MP180.p2.Log.final.out
+STAR	SummaryLog	F9_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_RAS_3_MP192.p2.Log.final.out
+STAR	SummaryLog	F6_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F6_RAS_3_MP180.p2.Log.final.out
+STAR	SummaryLog	F9_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_RAS_2_MP192.p2.Log.final.out
+STAR	SummaryLog	WT_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_RAS_2_MP192.p2.Log.final.out
+STAR	SummaryLog	F9_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_RAS_4_MP192.p2.Log.final.out
+STAR	SummaryLog	F9_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_RAS_2_MP180.p2.Log.final.out
+STAR	SummaryLog	WT_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_RAS_2_MP180.p2.Log.final.out
+STAR	SummaryLog	WT_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_MOCK_3_MP180.p2.Log.final.out
+STAR	SummaryLog	F9_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_MOCK_1_MP180.p2.Log.final.out
+STAR	SummaryLog	F9_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_MOCK_2_MP180.p2.Log.final.out
+STAR	SummaryLog	F9_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/F9_MOCK_2_MP192.p2.Log.final.out
+STAR	SummaryLog	WT_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_MOCK_4_MP180.p2.Log.final.out
+STAR	SummaryLog	WT_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_RAS_1_MP180.p2.Log.final.out
+STAR	SummaryLog	WT_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_MOCK_4_MP192.p2.Log.final.out
+STAR	SummaryLog	WT_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_RAS_3_MP192.p2.Log.final.out
+STAR	SummaryLog	WT_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_RAS_1_MP192.p2.Log.final.out
+STAR	SummaryLog	WT_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/logfiles/WT_MOCK_1_MP180.p2.Log.final.out
+STAR	ReadsPerGene	F9_RAS_3_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_3_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_3_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_3_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_2_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_2_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_2_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_2_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_3_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_3_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_1_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_1_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_2_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_1_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_4_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_4_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_4_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_2_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_1_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_2_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_1_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_3_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_2_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_4_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_1_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_1_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_MOCK_1_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_1_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_3_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_3_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_1_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_1_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_MOCK_2_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_2_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_3_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_3_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_4_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_3_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_RAS_4_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_4_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_MOCK_4_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_4_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_1_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_1_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_1_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_3_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_4_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_4_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_1_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_2_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_3_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_3_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_MOCK_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_2_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_1_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_1_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_4_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_4_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_4_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_4_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_4_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_RAS_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_3_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_3_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_2_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_1_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_1_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_MOCK_3_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_3_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_4_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_4_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_2_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_2_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_2_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_2_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_RAS_3_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_3_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_2_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_2_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_1_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_RAS_2_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_2_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_4_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_4_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_3_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_4_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_4_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_3_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_3_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_1_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_1_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_4_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_2_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_2_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_3_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_3_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_4_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_2_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_2_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_RAS_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_1_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_1_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_1_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_1_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_3_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_MOCK_3_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_4_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_4_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_4_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_4_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_2_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_2_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_1_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_1_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_2_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_MOCK_3_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_MOCK_3_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_4_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_4_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F6_RAS_1_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F6_RAS_1_MP180.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_2_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_2_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_4_MP180.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_4_MP180.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	WT_RAS_2_MP192	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/WT_RAS_2_MP192.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_MOCK_3_MP192.p2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_MOCK_3_MP192.p2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	F9_RAS_1_MP180	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/STAR_files/F9_RAS_1_MP180.ReadsPerGene.out.tab
+Cutadapt	all_sections	F9_MOCK_4_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775978.out
+Cutadapt	all_sections	WT_MOCK_3_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775983.out
+Cutadapt	all_sections	WT_RAS_1_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775970.out
+Cutadapt	all_sections	WT_MOCK_1_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775956.out
+Cutadapt	all_sections	F9_MOCK_3_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775990.out
+Cutadapt	all_sections	F9_MOCK_4_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775976.out
+Cutadapt	all_sections	F9_RAS_4_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775948.out
+Cutadapt	all_sections	F9_MOCK_2_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775972.out
+Cutadapt	all_sections	F6_MOCK_3_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775985.out
+Cutadapt	all_sections	WT_MOCK_4_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775988.out
+Cutadapt	all_sections	F9_RAS_4_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775967.out
+Cutadapt	all_sections	WT_RAS_3_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775963.out
+Cutadapt	all_sections	F9_MOCK_1_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775980.out
+Cutadapt	all_sections	F9_RAS_2_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775944.out
+Cutadapt	all_sections	WT_RAS_4_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775951.out
+Cutadapt	all_sections	F6_RAS_3_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775989.out
+Cutadapt	all_sections	WT_RAS_3_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775941.out
+Cutadapt	all_sections	F6_RAS_4_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775950.out
+Cutadapt	all_sections	WT_RAS_2_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775959.out
+Cutadapt	all_sections	WT_MOCK_2_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775979.out
+Cutadapt	all_sections	F9_RAS_1_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775973.out
+Cutadapt	all_sections	F9_RAS_3_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775939.out
+Cutadapt	all_sections	WT_RAS_4_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775986.out
+Cutadapt	all_sections	WT_RAS_2_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775968.out
+Cutadapt	all_sections	F9_MOCK_3_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775932.out
+Cutadapt	all_sections	F6_RAS_2_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775946.out
+Cutadapt	all_sections	F6_MOCK_2_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775947.out
+Cutadapt	all_sections	F9_RAS_1_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775953.out
+Cutadapt	all_sections	WT_RAS_1_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775984.out
+Cutadapt	all_sections	WT_MOCK_4_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775966.out
+Cutadapt	all_sections	WT_MOCK_1_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775965.out
+Cutadapt	all_sections	F9_MOCK_2_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775982.out
+Cutadapt	all_sections	F9_MOCK_1_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775949.out
+Cutadapt	all_sections	F6_MOCK_1_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775955.out
+Cutadapt	all_sections	F9_RAS_2_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775974.out
+Cutadapt	all_sections	F6_RAS_1_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775940.out
+Cutadapt	all_sections	WT_MOCK_3_MP192.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775961.out
+Cutadapt	all_sections	WT_MOCK_2_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775952.out
+Cutadapt	all_sections	F9_RAS_3_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775957.out
+Cutadapt	all_sections	F6_MOCK_4_MP180.R2	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/slurm-61775942.out
+FastQ Screen	all_sections	WT_MOCK_3_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_3_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_1_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_1_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_3_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_3_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F6_MOCK_2_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_MOCK_2_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F6_RAS_3_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_RAS_3_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_2_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_2_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_4_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_4_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_4_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_4_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_4_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_4_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_2_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_2_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_4_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_4_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_2_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_2_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_2_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_2_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_3_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_3_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_3_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_3_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_4_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_4_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	F6_RAS_3_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_RAS_3_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_1_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_1_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_4_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_4_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	F6_MOCK_1_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_MOCK_1_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F6_RAS_4_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_RAS_4_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_3_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_3_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_4_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_4_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_4_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_4_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_2_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_2_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F6_RAS_2_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_RAS_2_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F6_RAS_2_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_RAS_2_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_2_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_2_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_3_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_3_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_4_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_4_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_4_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_4_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_1_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_1_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_3_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_3_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_1_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_1_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_2_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_2_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_1_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_1_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_3_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_3_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	F6_MOCK_4_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_MOCK_4_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_2_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_2_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_4_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_4_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_1_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_1_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_1_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_1_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_4_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_4_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_1_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_1_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_2_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_2_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F6_MOCK_3_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_MOCK_3_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F6_MOCK_2_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_MOCK_2_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_4_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_4_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_2_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_2_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_2_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_2_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_1_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_1_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_2_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_2_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_3_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_3_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_4_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_4_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_2_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_2_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_4_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_4_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_3_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_3_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_2_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_2_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	F6_RAS_1_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_RAS_1_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_3_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_3_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_1_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_1_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_1_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_1_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_3_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_3_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_3_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_3_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	F6_MOCK_4_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_MOCK_4_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_3_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_3_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_1_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_1_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_2_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_2_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_3_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_3_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_1_MP192.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_1_MP192.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_1_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_1_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F6_RAS_1_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_RAS_1_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_MOCK_1_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_MOCK_1_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	F6_RAS_4_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_RAS_4_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_3_MP192.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_3_MP192.R1.trim_screen.txt
+FastQ Screen	all_sections	F9_RAS_4_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F9_RAS_4_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_MOCK_1_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_MOCK_1_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	WT_RAS_2_MP180.R1.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/WT_RAS_2_MP180.R1.trim_screen.txt
+FastQ Screen	all_sections	F6_MOCK_3_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_MOCK_3_MP180.R2.trim_screen.txt
+FastQ Screen	all_sections	F6_MOCK_1_MP180.R2.trim_screen	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/FQscreen2/F6_MOCK_1_MP180.R2.trim_screen.txt
+FastQC	all_sections	WT_RAS_2_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_2_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_3_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_3_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_1_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_1_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_4_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_4_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_1_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_1_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_4_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_4_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_4_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_4_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_1_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_1_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_1_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_1_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F6_MOCK_4_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_MOCK_4_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_2_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_2_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_4_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_4_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	F6_MOCK_1_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_MOCK_1_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_2_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_2_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_1_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_1_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_4_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_4_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F6_MOCK_1_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_MOCK_1_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_4_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_4_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_3_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_3_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_3_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_3_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_4_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_4_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F6_MOCK_3_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_MOCK_3_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_3_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_3_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F6_MOCK_4_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_MOCK_4_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_3_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_3_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_3_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_3_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	F6_RAS_1_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_RAS_1_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_3_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_3_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_1_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_1_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_2_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_2_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	F6_RAS_4_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_RAS_4_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_2_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_2_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_1_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_1_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F6_MOCK_3_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_MOCK_3_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_2_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_2_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_2_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_2_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_1_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_1_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_3_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_3_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_4_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_4_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_2_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_2_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F6_RAS_3_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_RAS_3_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_4_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_4_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_3_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_3_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_1_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_1_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_4_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_4_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_4_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_4_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_1_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_1_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_1_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_1_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_2_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_2_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F6_RAS_2_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_RAS_2_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_3_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_3_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_4_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_4_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_2_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_2_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_2_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_2_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_3_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_3_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_4_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_4_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F6_RAS_3_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_RAS_3_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_1_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_1_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_2_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_2_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_3_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_3_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F6_RAS_4_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_RAS_4_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F6_MOCK_2_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_MOCK_2_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_1_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_1_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_3_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_3_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_3_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_3_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_2_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_2_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_3_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_3_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_2_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_2_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_4_MP180.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_4_MP180.R2.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_1_MP192.R2.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_1_MP192.R2.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_1_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_1_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_3_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_3_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	WT_RAS_2_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_RAS_2_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_4_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_4_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F6_RAS_1_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_RAS_1_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F9_RAS_4_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_RAS_4_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F9_MOCK_1_MP192.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F9_MOCK_1_MP192.R1.trim_fastqc.zip
+FastQC	all_sections	F6_MOCK_2_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_MOCK_2_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	WT_MOCK_2_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/WT_MOCK_2_MP180.R1.trim_fastqc.zip
+FastQC	all_sections	F6_RAS_2_MP180.R1.trim	/gpfs/gsfs4/users/CCBR/projects/ccbr1057/HPCAPIRUN3/QC/F6_RAS_2_MP180.R1.trim_fastqc.zip

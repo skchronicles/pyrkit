@@ -134,3 +134,7 @@ data/multiqc_data.json
 # Ignore Testing Output
 multiqc_matrix.txt
 
+# DS Store
+.DS_Store
+._.DS_Store
+._*
