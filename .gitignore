@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Ignore MultiQC JSON (EXCEEDS MAX FILESIZE)
+tests/multiqc_data.json
+
+# Ignore Testing Output
+multiqc_matrix.txt
+tests/multiqc_matrix.txt
