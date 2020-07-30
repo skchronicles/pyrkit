@@ -8,6 +8,22 @@ import pandas as pd
 config = {
     ".warning": ["\033[93m", "\033[00m"], ".error": ["\033[91m", "\033[00m"],
 
+    ".rnaseq": {
+        ".default": {
+            ".output_preference": [
+                "Sample", "Encoding", "total_read_pairs", "trimmed_read_pairs",
+                "avg_sequence_length", "sequence_length", "gc_content", "percent_duplication",
+                "percent_aligned", "median_insert_size", "mean_insert_size", "mean_mapping_quality",
+                "mean_coverage", "avg_aligned_read_length", "pct_mrna_bases", "pct_coding_bases",
+                "pct_intronic_bases", "pct_utr_bases", "pct_intergenic_bases", "median_cv_coverage",
+                "median_5prime_to_3prime_bias", "median_5prime_bias", "median_3prime_bias",
+                "human_percent_aligned", "mouse_percent_aligned", "bacteria_percent_aligned",
+                "fungi_percent_aligned", "virus_percent_aligned", "rRNA_percent_aligned",
+                "uni_vec_percent_aligned", "percent_antisense_strand", "percent_sense_strand"
+            ]
+        }
+    },
+
 	"multiqc_cutadapt.txt": {
         "delimeter": "\t",
 		"clean_sample_name": [".R1$", ".R2$"],
@@ -69,7 +85,10 @@ config = {
 		},
         "typecast": {
             "percent_duplication": float
-        }
+        },
+        "scaling_factor": {
+            "percent_duplication": 100.0
+        },
 	},
 
 	"multiqc_picard_RnaSeqMetrics.txt": {
@@ -111,7 +130,11 @@ config = {
         "typecast": {
             "percent_sense_strand": float,
             "percent_antisense_strand": float
-        }
+        },
+        "scaling_factor": {
+            "percent_sense_strand": 100.0,
+            "percent_antisense_strand": 100.0
+        },
 	},
 
 	"multiqc_star.txt": {
@@ -273,6 +296,7 @@ def clean(linelist, sample_name_index, filename):
 def rename(header, filename):
     """Renames fields defined in config[filename]['rename_field']. Returns a list of re-named columns."""
     renamed = []
+    filename = os.path.basename(filename)
     for field in header:
         try:
             newname = config[filename]['rename_field'][field]
@@ -282,10 +306,12 @@ def rename(header, filename):
             renamed.append(field)
     return renamed
 
-def cast_type(value, column, filename, decimals=3):
+
+def cast_typed(value, column, filename, decimals=3):
     """Cast types data in a row/column according to specification in config[filename]["typecast"][column_name].
     Converts string to either an integer or float (rounded to three decimal places).
     """
+    filename = os.path.basename(filename)
     try:
         # Python witch-craft, functions are first-class objects and can be used accordingly
         # Storing function object into caster variable for typecasting as int() or float()
@@ -300,6 +326,29 @@ def cast_type(value, column, filename, decimals=3):
             value = caster(float(value))
     except KeyError:
         # No type is defined in config, pass
+        pass
+    return value
+
+
+def scaled(value, column, filename):
+    """Scales data in a row/column according to specification in config[filename]["scaling_factor"][column_name].
+    User-defined optional multiplier
+    """
+    filename = os.path.basename(filename)
+    try:
+        # Get the scaling factor
+        scaling_unit = config[filename]["scaling_factor"][column]  # KeyError if DNE
+        value = value * scaling_unit  # TypeError if string
+        value = round(value, 3)
+    except TypeError:
+        # Did not typecast value using the config
+        # Remove warning by typecasting value as float or int
+        cstart, cend = config['.warning']
+        print("{}Warning:{} Attribute {} in {} is NOT defined in config... defaulting to float".format(cstart, cend, column, filename))
+        if value: # case for when row/column is empty string
+            value = float(value) * scaling_unit
+            value = round(value, 3)
+    except KeyError:
         pass
     return value
 
@@ -319,7 +368,8 @@ def populate_table(parsed_header, parsed_line, file, data_dict):
     for i in range(0, len(parsed_line), 1):
         # Skip over sample name (already first key)
         if parsed_line[i]: # check if empty string
-            metadata = cast_type(parsed_line[i], parsed_header[i], file)
+            metadata = cast_typed(parsed_line[i], parsed_header[i], file)
+            metadata = scaled(metadata, parsed_header[i], file)
             data_dict[sample_name][parsed_header[i]] = metadata
 
     return data_dict
@@ -350,15 +400,11 @@ def parsed(file, delimeter='\t'):
 
             yield header, parsed_line
 
-
 def main():
 
-    # Todo:
-    #       1. Add ability to split a file before parsing (i.e. FastQC file)
-    #       2. Add ability to scale a defined field (add `scaling_factor` to config
-    #       3. Add a perferred output sorting mechanism
-    #       4. Get rid of pandas dependency, add transpose function and loop through dict to print table
-    #       5. Add more advanced argument parsing
+    # Minor Todo(s):
+    #       1. Get rid of pandas dependency (add transpose function and loop through dict to print table)
+    #       2. Add more advanced argument parsing, make path to config an arg
 
     # Check for usage and optional arguements, get list of files to parse
     ifiles = args(sys.argv)
@@ -373,6 +419,14 @@ def main():
             QC = populate_table(header, line, file, QC)
 
     df = pd.DataFrame(QC).transpose()
+
+    # Get default output peference
+    try:
+        output_preference = config['.rnaseq']['.default']['.output_preference']
+        df = df.reindex(columns = output_preference)
+    except KeyError:
+        # Output peference is not defined in config
+        pass
 
     # Write to file
     df.to_csv('multiqc_matrix.txt', index = False, sep='\t')
