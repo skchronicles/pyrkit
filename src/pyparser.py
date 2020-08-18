@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 from __future__ import print_function, division
 import sys, os, re
 import pandas as pd
@@ -169,7 +169,7 @@ config = {
 def help():
         return """
         USAGE:
-            python rnaseq_qc_table.py <file_1> <file_2> <file_3> <file_N> [-h]
+            python pyparser.py <file_1> <file_2> <file_3> <file_N> [-h]
 
             Positional Arguments:
                 [1...N]       Type [File]: An output file from MultiQC, or a list of
@@ -188,12 +188,13 @@ def help():
 
             Example:
                 # Creates QC table: multiqc_matrix.txt
-                $ python rnaseq_qc_table.py multiqc_cutadapt.txt multiqc_fastqc.txt multiqc_fastq_screen.txt multiqc_picard_dups.txt
+                $ python pyparser.py multiqc_cutadapt.txt multiqc_fastqc.txt multiqc_fastq_screen.txt multiqc_picard_dups.txt
                 > multiqc_matrix.txt
 
             Requirements:
                 multiqc == 1.9
                 python >= 2.7
+                   pandas
         """
 
 
