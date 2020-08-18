@@ -14,3 +14,5 @@ jobs:
       - run: pip install --upgrade pip
       - run: pip install -r requirements.txt
       - run: python src/pyparser.py data/*.txt
+      - run: md5sum multiqc_matrix.txt
+      - run: python src/excel2tsv.py data/experiment_metadata.xlsx data/sheet

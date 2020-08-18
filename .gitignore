@@ -138,3 +138,7 @@ multiqc_matrix.txt
 .DS_Store
 ._.DS_Store
 ._*
+
+# excel2tsv
+sheet_*
+data/sheet_*
