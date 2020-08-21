@@ -168,34 +168,38 @@ config = {
 
 def help():
         return """
-        USAGE:
-            python pyparser.py <file_1> <file_2> <file_3> <file_N> [-h]
+pyparser.py - a config based file parser.
 
-            Positional Arguments:
-                [1...N]       Type [File]: An output file from MultiQC, or a list of
-                                           output files generated from MultiQC. Each provided
-                                           file is parsed, and information is aggregated
-                                           across all samples into a single tab-seperated
-                                           ouput file: multiqc_matrix.txt
-            Supported MultiQC Files:
+USAGE:
+    python pyparser.py <file_1> <file_2> <file_3> <file_N> [-h]
+
+    Positional Arguments:
+        [1...N]       Type [File]: An output file from MultiQC, or a list of
+                                   output files generated from MultiQC. Each provided
+                                   file is parsed, and information is aggregated
+                                   across all samples into a single tab-seperated
+                                   ouput file: multiqc_matrix.txt
+
+            Currently Supported MultiQC Files:
             multiqc_cutadapt.txt, multiqc_star.txt, multiqc_picard_dups.txt,
             multiqc_fastq_screen.txt, multiqc_picard_RnaSeqMetrics.txt,
             multiqc_fastqc.txt, multiqc_rseqc_infer_experiment.txt,
             multiqc_qualimap_bamqc_genome_results.txt
 
-            Optional Arguments:
-                [-h, --help]  Displays usage and help information for the script.
+    Optional Arguments:
+        [-h, --help]  Displays usage and help information for the script.
 
-            Example:
-                # Creates QC table: multiqc_matrix.txt
-                $ python pyparser.py multiqc_cutadapt.txt multiqc_fastqc.txt multiqc_fastq_screen.txt multiqc_picard_dups.txt
-                > multiqc_matrix.txt
+    Example:
+        # Creates QC table: multiqc_matrix.txt in users current working directory
+        $ python pyparser.py multiqc_cutadapt.txt multiqc_fastqc.txt multiqc_fastq_screen.txt
+        # Supports globbing
+        $ python pyparser.py /path/to/MultiQC/ouput/folder/*.txt
 
-            Requirements:
-                multiqc == 1.9
-                python >= 2.7
-                   pandas
-        """
+    Requirements:
+        multiqc == 1.9
+        python >= 2.7
+          + pandas
+"""
 
 
 def args(argslist):
