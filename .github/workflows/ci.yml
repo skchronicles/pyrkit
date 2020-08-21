@@ -18,3 +18,4 @@ jobs:
       - run: python src/excel2tsv.py data/experiment_metadata.xlsx data/sheet
       - run: python src/uploader.py data/experiment_metadata.xlsx testing/DME
       - run: cat testing/DME/logs/data_dictionary.txt
+      - run: cat testing/DME/logs/project_information.txt
