@@ -20,8 +20,12 @@ config = {
             "description": 3,
             "example": 4
         }
+    },
+    "project_template": {
+        "sheet_name": "Project Template",
+        "test_sheet": "Example Project",
+        "skip_lines": [0,1],
     }
-
 }
 
 
@@ -136,11 +140,10 @@ def validate(user_inputs):
 
 
 def _parsed_meta(excel_df, indexes):
-    """Private function for 'meta_dictionary' to parse the Data Dictionary sheet.
+    """Private function for 'meta()' to parse the Data Dictionary sheet.
     This function generates the following parsed values: collection_type, is_required,
     field_name, dme_name.
     """
-    metadata = {}
     for i, row in excel_df.iterrows():
         # Remove any leading or trailing whitespace and parse the columns of interest
         collection_name, is_required, field_name, dme_name = [str(row[index]).lstrip().rstrip() for index in indexes]
@@ -178,16 +181,77 @@ def meta(sheet, spreadsheet, order, index, log_route):
 
         metadata[col][field] = [dme, req]
 
+    outfh.close()
+
     return metadata
 
-def project():
+
+def _remove_trailing_nan(linelist):
+    """Private function to clean project_value_list. Removes trailing nan's which
+    are empty sub-project cells. As an example, input ["nan", 1, 2, "nan", "nan"]
+    will return ["nan", 1, 2].
+    """
+    clean = linelist
+    # Looping through reversed list to get trailing values
+    for field in linelist[::-1]:
+        # skip over over empty lines or nan values
+        if not field or field == 'nan':
+            removed = clean.pop()
+        else:
+            break # break when encountering first non-empty string or non-nan
+
+    return clean
+
+
+def _parsed_project(excel_df):
+    """Private function for 'project()' to parse the Project Template sheet.
+    This function generates the following parsed values: collection_type, field,
+    project_value_list.
+    """
+    for i, row in excel_df.iterrows():
+        # Project information follows a key, value_list pattern
+        attr, *project_value_list = [str(field).lstrip().rstrip() for field in row]
+        # Pass over lines with no attribute or key
+        if not attr or attr == 'nan':
+            continue
+        # Get collection type: PI, Project, Sample
+        elif "collection" in attr.lower():
+            collection_type = project_value_list[0]
+            continue
+
+        # Remove trailing empty cells or nan's
+        project_value_list = _remove_trailing_nan(project_value_list)
+
+        yield collection_type, attr, project_value_list
+
+
+
+def project(sheet, spreadsheet, log_route):
     """Parses the 'Project Template' sheet in the project_request_spreadsheet
     to extract PI-level and Project-level metadata. Returns a nested dictionary where
     [key1] = collection_type (PI, Project), [key2] = field, and the value is a list
-    of values where each value is metadata for a sub-project [Proj-1_attr, Proj-2_attr].
+    of values where each value is metadata for a sub-project [Proj-1_attr, Proj-2_attr, ...].
     A log file gets created in '{user-defined-outpath}/logs/project_template.txt'.
     """
-    pass
+    skipover = config["project_template"]["skip_lines"]
+    metadata = {}
+
+    # Skip over reading the first line or header
+    df = pd.read_excel(spreadsheet, sheet_name=sheet, header=None, skiprows=skipover)
+    # Creating logging output file
+    outfh = open(os.path.join(log_route, "project_information.txt"), "w")
+
+    for col, field, pro_attr_list in _parsed_project(excel_df = df):
+        outfh.write("{}\t{}\t{}\n".format(col, field, "\t".join(pro_attr_list)))
+        if col not in metadata:
+            metadata[col] = {}
+
+        metadata[col][field] = pro_attr_list
+
+    outfh.close()
+
+    return metadata
+
 
 def main():
 
@@ -203,11 +267,13 @@ def main():
     data_catelog = config["data_dictionary"]["sheet_name"]
     sort = config["data_dictionary"]["order"]
     indices = config["data_dictionary"]["index"]
-
     # Generate Data Dictionary: dict[collection_type][field_name] = list(dme_name, is_required)
     meta_dictionary = meta(sheet = data_catelog, spreadsheet = metadata, order=sort, index=indices, log_route=logs)
 
+    # Get specification for parsing 'Project Template'
+    project_info = config["project_template"]["test_sheet"]
     # Get all project metadata from Project Template
+    project_dictionary = project(sheet = project_info, spreadsheet = metadata, log_route = logs)
 
 
 if __name__ == '__main__':
