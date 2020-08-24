@@ -9,7 +9,7 @@
 
 Along with capturing analysis-specific metadata for reproducibility, quality-control metadata is captured for each sample.
 
-> **Please Note**: Some of the metadata listed above is pipeline-specific (i.e. only for the RNA-seq pipeline).
+> **Please Note**: Some of the metadata listed in the example above is pipeline-specific (i.e. only for the [RNA-seq pipeline](https://ccbr.github.io/pipeliner-docs/RNA-seq/Gene-and-isoform-expression-overview/)).
 
 ### Installation
 ```bash
