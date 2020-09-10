@@ -25,6 +25,11 @@ config = {
         "sheet_name": "Project Template",
         "test_sheet": "Example Project",
         "skip_lines": [0,1],
+    },
+    "sample_template": {
+        "sheet_name": "Sample Template",
+        "test_sheet": "Example Sample",
+        "skip_lines": [0,1],
     }
 }
 
@@ -253,6 +258,51 @@ def project(sheet, spreadsheet, log_route):
     return metadata
 
 
+def _parsed_sample(excel_df):
+    """Private function for 'sample()' to parse the Sample Template sheet.
+    This function generates the following parsed values: SampleID, field,
+    sample_metadata_value.
+    """
+    for i, row in excel_df.iterrows():
+        attr, *project_value_list = [str(field).lstrip().rstrip() for field in row]
+        # Pass over lines with no attribute or key
+        if not attr or attr == 'nan' or attr.lower().startswith('optional field'):
+            continue
+        # Check if header and clean
+        if attr.lower() == 'sample id':
+            header = _remove_trailing_nan(project_value_list)
+            continue
+
+        for i in range(0,len(header),1):
+            yield attr, header[i], project_value_list[i]
+
+
+def sample(sheet, spreadsheet, log_route):
+    """Parses the 'Sample Template' sheet in the project_request_spreadsheet
+    to extract Sample-level metadata. Returns a nested dictionary where
+    [key1] = SampleID, [key2] = field, and value = user-provided info.
+    A log file gets created in '{user-defined-outpath}/logs/project_template.txt'.
+    """
+    skipover = config["sample_template"]["skip_lines"]
+    metadata = {}
+
+    # Skip over reading the first line or header
+    df = pd.read_excel(spreadsheet, sheet_name=sheet, header=None, skiprows=skipover)
+    # Creating logging output file
+    outfh = open(os.path.join(log_route, "sample_information.txt"), "w")
+
+    for sid, field, value in _parsed_sample(excel_df = df):
+        outfh.write("{}\t{}\t{}\n".format(sid, field, value))
+        if sid not in metadata:
+            metadata[sid] = {}
+
+        metadata[sid][field] = value
+
+    outfh.close()
+
+    return metadata
+
+
 def main():
 
     # @args(): Parses positional command-line args
@@ -267,6 +317,7 @@ def main():
     data_catelog = config["data_dictionary"]["sheet_name"]
     sort = config["data_dictionary"]["order"]
     indices = config["data_dictionary"]["index"]
+    
     # Generate Data Dictionary: dict[collection_type][field_name] = list(dme_name, is_required)
     meta_dictionary = meta(sheet = data_catelog, spreadsheet = metadata, order=sort, index=indices, log_route=logs)
 
@@ -274,6 +325,11 @@ def main():
     project_info = config["project_template"]["test_sheet"]
     # Get all project metadata from Project Template
     project_dictionary = project(sheet = project_info, spreadsheet = metadata, log_route = logs)
+
+    # Get specification for parsing 'Sample Template'
+    sample_info = config["sample_template"]["test_sheet"]
+    # Get all sample metadata from Sample Template
+    sample_dictionary = sample(sheet = sample_info, spreadsheet = metadata, log_route = logs)
 
 
 if __name__ == '__main__':
