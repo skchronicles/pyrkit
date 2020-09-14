@@ -1,0 +1,16 @@
+{
+    "metadataEntries": [
+        {
+         "attribute": "collection_type",
+          "value": "Sample"
+        },
+        {
+         "attribute": "phi_content",
+         "value": "Unspecified"
+        },
+        {
+         "attribute": "pii_content",
+         "value": "Unspecified"
+        }
+    ]
+}
