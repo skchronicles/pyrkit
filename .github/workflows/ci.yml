@@ -16,9 +16,12 @@ jobs:
       - run: python src/pyparser.py data/*.txt
       - run: md5sum multiqc_matrix.txt
       - run: python src/excel2tsv.py data/experiment_metadata.xlsx data/sheet
-      - run: python src/lint.py data/experiment_metadata.xlsx testing/DME
+      - run: python src/lint.py data/experiment_metadata.xlsx testing/DME --dry-run 
       - run: cat testing/DME/logs/data_dictionary.txt
       - run: cat testing/DME/logs/project_information.txt
       - run: cat testing/DME/logs/sample_information.txt
+      - run: cat testing/DME/logs/data_dictionary.json
+      - run: cat testing/DME/logs/project.json
+      - run: cat testing/DME/logs/sample.json
       - run: md5sum testing/DME/logs/*.txt
-      - run: md5sum testing/DME/logs/*.db
+      - run: md5sum testing/DME/logs/*.json

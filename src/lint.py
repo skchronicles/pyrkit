@@ -3,7 +3,7 @@
 
 from __future__ import print_function, division
 import pandas as pd
-import sys, os, re, pickle
+import sys, os, re, json
 
 # Configuration for defining valid sheets and other default values
 config = {
@@ -67,10 +67,15 @@ Required Positional Arguments:
                                   files. If the PATH does not exist, it will be
                                   automatically created during runtime.
 Options:
-    [-h, --help]  Displays usage and help information for the script.
+    [-h, --help]                  Displays usage and help information for the script.
+    [-n, --dry-run]               Dry-run using the included example sheets.
 
 Example:
+    # Run against user-provided information: "Project Template", "Sample Template"
     $ python lint.py data/experiment_metadata.xlsx /scratch/$USER/DME_Upload/
+
+    # Dry-run against included examples: "Example Project", "Example Sample"
+    $ python lint.py data/experiment_metadata.xlsx /scratch/$USER/DME_Upload/ -n
 
 Requirements:
     python >= 3.5
@@ -79,7 +84,7 @@ Requirements:
 """
 
 
-def args(argslist):
+def args(argslist, dryrun = False):
     """Parses command-line args from "sys.argv". Returns a list of args to parse."""
     # Input list of filenames to parse
     user_args = argslist[1:]
@@ -88,13 +93,20 @@ def args(argslist):
     if '-h' in user_args or '--help' in user_args:
         print(help())
         sys.exit(0)
+
+    # Check for dry-run boolean flag
+    elif '-n' in user_args or '--dry-run' in user_args:
+        print('Dry-running with included example sheets: "Example Project", "Example Sample"')
+        user_args = [arg for arg in user_args if arg not in ['-n', '--dry-run']]
+        dryrun = True
+
     # Check to see if user provided input files to parse
-    elif len(user_args) != 2:
+    if len(user_args) != 2:
         print("\n{}Error: Failed to provide all required arguments{}".format(*config['.error']), file=sys.stderr)
         print(help())
         sys.exit(1)
 
-    return user_args
+    return user_args + [dryrun]
 
 
 def path_exists(path):
@@ -153,12 +165,12 @@ def validate(user_inputs):
     exit-code 1. If a directory does not exist, it will attempt to create it.
     """
 
-    meta_sheet, output_path = user_inputs
+    meta_sheet, output_path, dryrun = user_inputs
     file_exists(meta_sheet)
     path_exists(output_path)
     sheets = contains_sheets(meta_sheet)
 
-    return meta_sheet, output_path, sheets
+    return meta_sheet, output_path, sheets, dryrun
 
 
 def _parsed_meta(excel_df, indexes):
@@ -369,11 +381,16 @@ def main():
 
     # @args(): Parses positional command-line args
     # @validate(): Checks if user inputs are vaild
-    metadata, opath, sheets = validate(args(sys.argv))
+    metadata, opath, sheets, dryrun = validate(args(sys.argv))
 
     # Log file directory and parsed pickled data
     logs = os.path.join(opath, "logs")
     path_exists(logs)
+
+    # Determining whether to use the user-provided templates or the test sheets
+    this_template = 'sheet_name'
+    if dryrun:
+        this_template = 'test_sheet'
 
     # Get specification for parsing 'Data Dictionary'
     data_catelog = config["data_dictionary"]["sheet_name"]
@@ -384,12 +401,12 @@ def main():
     meta_dictionary, req_fields = meta(sheet = data_catelog, spreadsheet = metadata, order=sort, index=indices, log_route=logs)
 
     # Get specification for parsing 'Project Template'
-    project_info = config["project_template"]["test_sheet"]
+    project_info = config["project_template"][this_template]
     # Get all project metadata from Project Template
     project_dictionary, subprojects = project(sheet = project_info, spreadsheet = metadata, log_route = logs)
 
     # Get specification for parsing 'Sample Template'
-    sample_info = config["sample_template"]["test_sheet"]
+    sample_info = config["sample_template"][this_template]
     # Get all sample metadata from Sample Template
     sample_dictionary = sample(sheet = sample_info, spreadsheet = metadata, log_route = logs)
 
@@ -402,12 +419,15 @@ def main():
         print("{}Error:{} Failed to provide required field(s) {}...exiting".format(estart, eend, missing), file=sys.stderr)
         sys.exit(1)
 
-    # Save parsed data into a serialized object
-    with open(os.path.join(logs, "project.db"), 'wb') as file:
-        pickle.dump(project_dictionary, file)
+    # Save parsed data as JSON file
+    with open(os.path.join(logs, "data_dictionary.json"), 'w') as file:
+        json.dump(meta_dictionary, file, sort_keys=True, indent=4)
 
-    with open(os.path.join(logs, "sample.db"), 'wb') as file:
-        pickle.dump(sample_dictionary, file)
+    with open(os.path.join(logs, "project.json"), 'w') as file:
+        json.dump(project_dictionary, file, sort_keys=True, indent=4)
+
+    with open(os.path.join(logs, "sample.json"), 'w') as file:
+        json.dump(sample_dictionary, file, sort_keys=True, indent=4)
 
 if __name__ == '__main__':
 
