@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 from __future__ import print_function, division
-import sys, os, re
 import pandas as pd
+import sys, os, re, pickle
 
 # Configuration for defining valid sheets and other default values
 config = {
@@ -25,7 +26,21 @@ config = {
         "sheet_name": "Project Template",
         "test_sheet": "Example Project",
         "skip_lines": [0,1],
-        "singularities": ['PI Name', 'PI Affiliation', 'Project Title', 'Project Description', 'Start Date', 'Project POC', 'Contact Email']
+        "singularities": [
+                            'PI Name', 'PI Affiliation', 'Project Title',
+                            'Project Description', 'Start Date',
+                            'Project POC', 'Contact Email'
+                        ],
+        "mvds": [
+                    'Nature of Request', 'Type of Project', 'Origin of Data',
+                    'Access', 'Organism(s)', 'Number of Samples',
+                    'Summary of Samples', 'Project Supplementary file',
+                    'Collaborators', 'Publication Status', 'PubMed ID',
+                    'DOI', 'Public Data Accession ID', 'Other Affiliation',
+                    'Other Related CCBR Project', 'Project Priority Comment',
+                    'Study Disease', 'Assembly Name', 'Platform Name',
+                    'Cell Line Name'
+                ]
     },
     "sample_template": {
         "sheet_name": "Sample Template",
@@ -37,10 +52,12 @@ config = {
 
 def help():
         return """
-USAGE:
-    python uploader.py <project_request_spreadsheet> <output_directory> [-h]
+lint.py: Parses user-provided metadata spreadsheet and checks for errors.
 
-    Positional Arguments:
+USAGE:
+    python lint.py <project_request_spreadsheet> <output_directory> [-h]
+
+Required Positional Arguments:
     [1] project_request_sheet     Type [File]: A filled out project request out form.
                                   This spreadsheet is sent out to the PI or post-doc
                                   that is requesting our assistance. Please see
@@ -49,15 +66,14 @@ USAGE:
     [2] output_directory          Type [Path]: Absolute or relative PATH for output
                                   files. If the PATH does not exist, it will be
                                   automatically created during runtime.
-
-    Optional Arguments:
+Options:
     [-h, --help]  Displays usage and help information for the script.
 
-    Example:
-    $ python uploader.py data/experiment_metadata.xlsx /scratch/$USER/DME_Upload/
+Example:
+    $ python lint.py data/experiment_metadata.xlsx /scratch/$USER/DME_Upload/
 
-    Requirements:
-    python >= 2.7
+Requirements:
+    python >= 3.5
       + pandas
       + xlrd
 """
@@ -311,59 +327,42 @@ def sample(sheet, spreadsheet, log_route):
     return metadata
 
 
-def missing_fields(parsed_dict, data_dict, collection_type, requirements, Nsubprojects = None):
+def missing_fields(parsed_dict, data_dict, collection_type, requirements, Nsubprojects = None, ext = []):
     """Checks the parsed fields in the user-provided spreadsheet against the
     data dictionary to see if all the required fields were provided.
-    RE-FACTOR THIS FUNCTION LATER
     """
     cstart, cend = config['.warning']
     estart, eend = config['.error']
-    singular_attr = config['project_template']['singularities']
-    provided = []
-    if collection_type == "Project":
-        for collection, fdict in parsed_dict.items():
-            for field, valueslist in fdict.items():
-                try:
-                    is_req = data_dict[collection][field][-1]
-                except KeyError:
-                    print("{}WARNING:{} Provided fields ({}, {}) are not defined in data dictionary... skipping over now!".format(cstart, cend, collection, field), file=sys.stderr)
-                    continue
+    mvd_attr = config['project_template']['mvds']
+    provided = [] + ext
 
-                if is_req.lower() == 'required':
-                    mvd_fields = [v for v in valueslist if v.strip() and v.lower() != 'nan']
-                    # Check for any missing required sub-project fields
-                    if field not in singular_attr and len(mvd_fields) != Nsubprojects:
-                        print("{}Error:{} Failed to provide required field ({}) for all sub-projects...exiting".format(estart, eend, field), file=sys.stderr)
-                        sys.exit(1)
-                    # Check for singular required fields (no MVD relationship)
-                    elif field in singular_attr and not mvd_fields:
-                        print("{}Error:{} Failed to provide required field ({})...exiting".format(estart, eend, field), file=sys.stderr)
-                        sys.exit(1)
-                    provided.append(field)
+    for k, fdict in parsed_dict.items():
+        if collection_type == 'Sample':
+            k = 'Sample'
+        for field, uvalue in fdict.items():
+            try: # Get whether a field is required or optional
+                is_req = data_dict[k][field][-1]
+            except KeyError:
+                print("{}WARNING:{} Provided fields ({}, {}) are not defined in data dictionary... skipping over now!".format(cstart, cend, k, field), file=sys.stderr)
+                continue
 
-    elif collection_type == 'Sample':
-        provided.append('Sample ID')
-        for sid, fdict in parsed_dict.items():
-            for field, value in fdict.items():
-                try:
-                    is_req = data_dict['Sample'][field][-1]
-                except KeyError:
-                    print("{}WARNING:{} Provided fields ({}, {}) are not defined in data dictionary... skipping over now!".format(cstart, cend, collection, field), file=sys.stderr)
-                    continue
+            if is_req.lower() == 'required':
+                mvd_fields = [v for v in uvalue if v.strip() and v.lower() != 'nan']
 
-                if is_req.lower() == 'required':
-                    # if empty string or nan value
-                    if not value.strip() or value.lower() == 'nan':
-                        print("{}Error:{} Failed to provide required field ({})...exiting".format(estart, eend, field), file=sys.stderr)
-                        sys.exit(1)
-                    provided.append(field)
+                # Check for any missing required sub-project fields
+                if field in mvd_attr and len(mvd_fields) != Nsubprojects:
+                    print("{}Error:{} Failed to provide required field ({}) for all sub-projects...exiting".format(estart, eend, field), file=sys.stderr)
+                    sys.exit(1)
+
+                # Check for singular required fields (no MVD relationship)
+                elif field not in mvd_attr and not mvd_fields:
+                    print("{}Error:{} Failed to provide required field ({})...exiting".format(estart, eend, field), file=sys.stderr)
+                    sys.exit(1)
+                provided.append(field)
 
     missing = set(requirements) - set(provided)
 
     return missing
-
-
-
 
 
 def main():
@@ -372,7 +371,7 @@ def main():
     # @validate(): Checks if user inputs are vaild
     metadata, opath, sheets = validate(args(sys.argv))
 
-    # Log file directory
+    # Log file directory and parsed pickled data
     logs = os.path.join(opath, "logs")
     path_exists(logs)
 
@@ -396,13 +395,19 @@ def main():
 
     # Check if user has provided all required check_fields
     missing = missing_fields(parsed_dict=project_dictionary, data_dict=meta_dictionary, collection_type="Project", requirements=req_fields, Nsubprojects=subprojects)
-    missing = missing_fields(parsed_dict=sample_dictionary, data_dict=meta_dictionary, collection_type="Sample", requirements=missing)
+    missing = missing_fields(parsed_dict=sample_dictionary, data_dict=meta_dictionary, collection_type="Sample", requirements=missing, ext=['Sample ID'])
 
     if missing:
         estart, eend = config['.error']
         print("{}Error:{} Failed to provide required field(s) {}...exiting".format(estart, eend, missing), file=sys.stderr)
         sys.exit(1)
 
+    # Save parsed data into a serialized object
+    with open(os.path.join(logs, "project.db"), 'wb') as file:
+        pickle.dump(project_dictionary, file)
+
+    with open(os.path.join(logs, "sample.db"), 'wb') as file:
+        pickle.dump(sample_dictionary, file)
 
 if __name__ == '__main__':
 
