@@ -20,8 +20,8 @@ jobs:
       - run: cat testing/DME/logs/data_dictionary.txt
       - run: cat testing/DME/logs/project_information.txt
       - run: cat testing/DME/logs/sample_information.txt
-      - run: cat testing/DME/logs/data_dictionary.json
-      - run: cat testing/DME/logs/project.json
-      - run: cat testing/DME/logs/sample.json
+      - run: cat testing/DME/data_dictionary.json
+      - run: cat testing/DME/project.json
+      - run: cat testing/DME/sample.json
       - run: md5sum testing/DME/logs/*.txt
-      - run: md5sum testing/DME/logs/*.json
+      - run: md5sum testing/DME/*.json

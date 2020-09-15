@@ -420,13 +420,13 @@ def main():
         sys.exit(1)
 
     # Save parsed data as JSON file
-    with open(os.path.join(logs, "data_dictionary.json"), 'w') as file:
+    with open(os.path.join(opath, "data_dictionary.json"), 'w') as file:
         json.dump(meta_dictionary, file, sort_keys=True, indent=4)
 
-    with open(os.path.join(logs, "project.json"), 'w') as file:
+    with open(os.path.join(opath, "project.json"), 'w') as file:
         json.dump(project_dictionary, file, sort_keys=True, indent=4)
 
-    with open(os.path.join(logs, "sample.json"), 'w') as file:
+    with open(os.path.join(opath, "sample.json"), 'w') as file:
         json.dump(sample_dictionary, file, sort_keys=True, indent=4)
 
 if __name__ == '__main__':
