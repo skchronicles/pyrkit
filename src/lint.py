@@ -141,6 +141,7 @@ def file_exists(filename):
         sys.exit(1)
     return
 
+
 def contains_sheets(spreadsheet):
     """Checks to see if user-provided spreadsheet contains all the required sheets
     that are defined in the config specification. Please see config['.sheets']
@@ -158,6 +159,7 @@ def contains_sheets(spreadsheet):
         sys.exit(1)
 
     return valid_sheets
+
 
 def validate(user_inputs):
     """Checks user input to see if file/directory exists or is accessible.
