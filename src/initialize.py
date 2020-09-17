@@ -62,6 +62,7 @@ Required Positional Arguments:
 Options:
     [-c, --convert]               Type [Boolean]: Provide flag if field names need
                                   to be converted into DME format.
+
     [-h, --help]                  Displays usage and help information for the script.
 
 Example:
@@ -257,14 +258,14 @@ def _project(parsed_data, template, opath, dme_vault):
     adds it to the template, and writes it to a new file. Returns a dictionary containing
     collection information where [keys] are collection_name and values are the output
     filename for parsed metadata. The relationship between each project request to
-    Project collection(s) is '1:M'.
+    Project collection(s) is '1:M' (multiple sub-projects, i.e. RNA-seq and ATAC-seq).
     """
     subcollections = {}
     subprojects = parsed_data["Project"]["request_type"]
     singular_fields = config["project_template"]["singularity_required"]
 
     for i in range(0, len(subprojects), 1):
-        temp = {"metadataEntries": [{"attribute": "collection_type","value": "Project"}]}
+        temp = {"metadataEntries": [{"attribute": "collection_type", "value": "Project"}]}
         for k, metadict in parsed_data.items():
             for field, valueslist in metadict.items():
                 if valueslist: # only add it user provided values
@@ -286,6 +287,34 @@ def _project(parsed_data, template, opath, dme_vault):
                 method = method.replace(" ","-")
                 sdate = sdate.split()[0]
                 collection_name = 'Project_{}_{}_{}{}_{}'.format(poc, origin, nsamples, method, sdate)
+
+                outfile = os.path.join(opath, '{}_collection.json'.format(collection_name))
+                subcollections[collection_name] = outfile
+
+                #Save upload collection metadata data as JSON file
+                with open(outfile, 'w') as file:
+                    json.dump(temp, file, sort_keys=True, indent=4)
+
+    return subcollections
+
+
+def _sample(parsed_data, template, opath, dme_vault):
+    """Private helper function to generate(). Extracts Project metadata from parsed_data,
+    adds it to the template, and writes it to a new file. Returns a dictionary containing
+    collection information where [keys] are collection_name and values are the output
+    filename for parsed metadata. The relationship between each project request to
+    rawdata sample collection(s) is '1:M'.
+    """
+    subcollections = {}
+
+    for sid, metadict in parsed_data.items():
+            temp = {"metadataEntries": [{"attribute": "collection_type", "value": "Sample"}]}
+            for field, userdata in metadict.items():
+                if userdata and userdata != 'nan':
+                    temp['metadataEntries'].append({'attribute': field, 'value': userdata})
+            else:
+                sname = parsed_data[sid]["sample_name"]
+                collection_name = 'rData_{}_{}'.format(sid, sname)
 
                 outfile = os.path.join(opath, '{}_collection.json'.format(collection_name))
                 subcollections[collection_name] = outfile
@@ -323,8 +352,11 @@ def main():
     # Generate PI_Lab collection metadata
     pi_collects = generate(parsed_data=pi_dict, template=os.path.join(template_path, 'pi_lab_collection.json'), opath=opath, dme_vault=vault, helper=_pi)
 
-    # Generate Project(s) collection metadata
+    # Generate Project collection(s) metadata
     project_collects = generate(parsed_data=project_dict, template=os.path.join(template_path, 'project_collection.json'), opath=opath, dme_vault=vault, helper=_project)
+
+    # Generate Sample collection(s) metadata
+    sample_collects = generate(parsed_data=sample_dict, template=os.path.join(template_path, 'sample_collection.json'), opath=opath, dme_vault=vault, helper=_sample)
 
 
 if __name__ == '__main__':
