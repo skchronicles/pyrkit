@@ -27,6 +27,7 @@ jobs:
       - run: cat testing/DME/meta/PI_Lab_CurtisHarris_LHC_collection.json
       - run: cat testing/DME/meta/Project_JaneDoe_ATRF-SF_212RNA-seq_2020-09-14_collection.json
       - run: cat testing/DME/meta/Project_JaneDoe_GEO_47Microarray_2020-09-14_collection.json
+      - run: cat testing/DME/meta/rData_AC633_SILNM3_collection.json
       - run: md5sum testing/DME/logs/*.txt
       - run: md5sum testing/DME/*.json
       - run: md5sum testing/DME/meta/*.json
