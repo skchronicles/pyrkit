@@ -1,0 +1,346 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
+"""push2dme: pushes files on our local filesystem to object storage
+About:
+      This program generates the required metedata to push local files into object
+    storage in HPC DME for archival purposes. This program ensures that mandatory
+    metadata reuirements are fulfilled prior to pushing data into HPC DME.
+      Please note that the collection or path in HPC DME that is specified by the
+    '--output' option must exist or must be created in HPC DME prior to running
+    this program.
+USAGE:
+	$ push2dme <raw|processed> [OPTIONS]
+Example:
+    $ push2dme raw --input /path/to/data/*.{bam,tsv,html} --output /CCBR_EXT_Archive/PI_Lab_KennethAldape_LP/Project_ZiedAbdullaev_KennethAldape_Brain_Tumor_Cohort_465RNA-seq_2020-12-08/Primary_Analysis_RNA-seq_465samples_hg38_35
+"""
+
+from __future__ import print_function
+import sys, os, json
+
+
+__author__ = 'Skyler Kuhn'
+__version__ = 'v0.0.1'
+__email__ = 'kuhnsa@nih.gov'
+
+
+def exists(testpath):
+    """Checks if file exists on the local filesystem.
+    @param testpath <str>:
+        Name of file/directory to check
+    @return does_exist <boolean>:
+        True when file/directory exists, False when file/directory does not exist
+    """
+    does_exist = True
+    if not os.path.exists(testpath):
+        does_exist = False # File or directory does not exist on the filesystem
+
+    return does_exist
+
+
+def permissions(parser, filename, *args, **kwargs):
+    """Checks permissions using os.access() to see the user is authorized to access
+    a file/directory. Checks for existence, readability, writability and executability via:
+    os.F_OK (tests existence), os.R_OK (tests read), os.W_OK (tests write), os.X_OK (tests exec).
+    @param parser <argparse.ArgumentParser() object>:
+        Argparse parser object
+    @param filename <str>:
+        Name of file to check
+    @return filename <str>:
+        If file exists and user can read from file
+    """
+    if not exists(filename):
+        parser.error("File '{}' does not exists! Failed to provided vaild input.".format(filename))
+
+    if not os.access(filename, *args, **kwargs):
+        parser.error("File '{}' exists, but cannot read file due to permissions!".format(filename))
+
+    return filename
+
+
+def _cp_r_safe_(source, target, resources = []):
+    """Private function: Given a list paths it will recursively copy each to the
+    target location. If a target path already exists, it will NOT over-write the
+    existing paths data.
+    @param resources <list[str]>:
+        List of paths to copy over to target location
+    @params source <str>:
+        Add a prefix PATH to each resource
+    @param target <str>:
+        Target path to copy templates and required resources
+    """
+    from shutil import copytree
+
+    for resource in resources:
+        destination = os.path.join(target, resource)
+        if not exists(destination):
+            # Required resources do not exist
+            copytree(os.path.join(source, resource), destination)
+
+    return
+
+
+def md5sum(filename, blocksize = 65536):
+    """Gets md5checksum of a file in memory-safe manner.
+    The file is read in blocks defined by the blocksize parameter. This is a safer
+    option to reading the entire file into memory if the file is very large.
+    @param filename <str>:
+        Input file on local filesystem to find md5 checksum
+    @param blocksize <int>:
+        Blocksize of reading N chunks of data to reduce memory profile
+    @return hasher.hexdigest() <str>:
+        MD5 checksum of the file's contents
+    """
+    import hashlib
+
+    hasher = hashlib.md5()
+    with open(filename, 'rb') as fh:
+        buf = fh.read(blocksize)
+        while len(buf) > 0:
+            hasher.update(buf)
+            buf = fh.read(blocksize)
+
+    return hasher.hexdigest()
+
+
+def compressed(file_extension):
+    """Determines if a file is compressed based on its file extension.
+    @param file_extension <str>:
+        File extension of input file
+    @return data_compression <str>:
+        DME controlled vocabulary for file compression status
+    """
+    data_compression = "Not Compressed"
+    if file in ["bz2", "gz", "bam", "xz", "rar", "tar", "tbz2", "tgz", "zip", "7z"]:
+        data_compression = "Compressed"
+
+    return data_compression
+
+
+def generate_json(metadata, output_filename):
+    """Generate metadata json file expected by dm_register_directory command
+    @param metadata <dictionary>:
+        Dictionary containing key,value pairs of attributes and values
+    @param output_filename <str>:
+         Metadata json file expected by dm_register_directory command
+    """
+    # Save upload data-object metadata data as JSON file
+    print('Creating {}'.format(output_filename))
+    with open(output_filename, 'w') as file:
+        json.dump(metadata, file, sort_keys=True, indent=4)
+
+    return
+
+
+def ftype(filename):
+    """Infers the file type from the filename (FASTQ, BAM, COUNTS, TSV, HTML)
+    @param filename <str>:
+        Name of file to infer the file type
+    @return filetype <str>:
+        Inferred file type (FASTQ, BAM, COUNTS, TSV, HTML)
+    """
+    filename = filename.rstrip('.gz')
+    filetype = filename.split('.')[-1].upper()
+
+    # Check for common edge-cases
+    if 'counts' in filename and filetype not in ['MD5', 'JSON']:
+        filetype = 'COUNTS'
+    elif 'fastq' in filename and filetype not in ['MD5', 'JSON']:
+        filetype = 'FASTQ'
+
+    return filetype
+
+
+
+def minimal_common_metadata(input_file, dme_path):
+    """Get common required metadata across raw and processed data.
+    @param input_file <str>:
+        Input file on local filesystem to archive
+    @param dme_path <str>:
+        Path or collection in HPC DME to archive the file
+    @return metadata <dictionary>:
+        Dictionary containing metadata values and attributes of the file to upload
+    """
+    # Get minimal required metadata
+    sample = os.path.basename(input_file)
+
+    # Metadata Template
+    metadata = \
+    {
+        "metadataEntries": [
+            {
+                "attribute": "phi_content",
+                "value": "Unspecified"
+            },
+            {
+                "attribute": "pii_content",
+                "value": "Unspecified"
+            },
+            {
+                "attribute": "data_encryption_status",
+                "value": "Unspecified"
+            },
+            {
+                "attribute": "analysis_team",
+                "value": "CCBR"
+            },
+            {
+                "attribute": "sample_name",
+                "value": sample
+            },
+            {
+                "attribute": "object_name",
+                "value": os.path.join(dme_path, sample)
+            },
+            {
+                "attribute": "alias",
+                "value": os.path.abspath(input_file)
+            },
+            {
+                "attribute": "file_type",
+                "value": ftype(sample)
+            },
+            {
+                "attribute": "data_compression_status",
+                "value": compressed(sample.split('.')[-1].upper())
+            },
+            {
+                "attribute": "md5_checksum",
+                "value": md5sum(input_file)
+            },
+
+
+        ]
+    }
+
+    return metadata
+
+
+def process(sub_args):
+    """Generate required metadata and push/archives processed data (bams, counts, reports)
+    into HPC DME.
+    @param sub_args <parser.parse_args() object>:
+        Parsed arguments for raw sub-command
+    """
+
+    for file in sub_args.input:
+        metadata = minimal_common_metadata(input_file = file, dme_path = sub_args.output)
+        output_file = os.path.abspath(file) + ".metadata.json"
+        generate_json(metadata = metadata, output_filename = output_file)
+
+    return
+
+
+def raw(sub_args):
+    """Generate required metadata and push/archives raw data (FastQ) into HPC DME.
+    The metadata requirements for pushing rawdata into HPC DME differ from processed
+    data. This function will extract metadata from the provided FastQ file prior
+    to upload into DME.
+    @param sub_args <parser.parse_args() object>:
+        Parsed arguments for raw sub-command
+    """
+    # Add steps to parse fastq files and flowcell_id, lane, and run information
+    sys.exit('Feature to be implemented soon! Please contact {} for more information.'.format(__author__))
+
+
+def parsed_arguments():
+    """Parses user-provided command-line arguments. Requires argparse package.
+    """
+    import argparse
+
+    # Create a top-level parser
+    parser = argparse.ArgumentParser(description = 'push2dme: \
+                                                    a utility to push local files \
+                                                    into HPC DME object storage.')
+
+    # Adding Verison information
+    parser.add_argument('--version', action = 'version', version='%(prog)s {}'.format(__version__))
+
+    # Create sub-command parser
+    subparsers = parser.add_subparsers()
+
+    # Options for the "raw" sub-command
+    subparser_raw = subparsers.add_parser('raw',
+                                            help = 'Pushes raw data (FastQ files) into HPC DME.',
+                                            description = 'Metadata requirements for pushing \
+                                            raw data into HPC DME differ from processed data. This ultility \
+                                            will collect information within the FastQ files such as flowcell, \
+                                            lanes, and run number.')
+    # Input FastQ files
+    subparser_raw.add_argument('-i', '--input',
+                                # Check if the file exists and if it is readable
+                                type = lambda file: permissions(parser, file, os.R_OK),
+                                required = True,
+                                nargs = '+',
+                                help = 'Required: Input FastQ file to be uploaded. \
+                                        One FastQ file must be provided. \
+                                        Example: --input *.fastq.gz')
+    # Output Collection in HPC DME
+    subparser_raw.add_argument('-o', '--output',
+                                type = str,
+                                required = True,
+                                help = 'Required: Path/Collection in HPC DME to archive the file. \
+                                        This is the absolute PATH in HPC DME where the file will be archived. \
+                                        Please note each collection MUST be intialized prior to running push2dme. \
+                                        Example: --output /Archive/PI_Lab/Project/Primary_Analysis')
+
+    # Dry-run (do not execute upload)
+    subparser_raw.add_argument('-n', '--dry-run',
+                                action = 'store_true',
+                                required = False,
+                                default = False,
+                                help = 'Optional: Do not execute anything, \
+                                and only display what steps would be run [Default: False].')
+
+
+    # Options for the "processed" sub-command
+    subparser_processed = subparsers.add_parser('processed',
+                                            help = 'Pushes processed data (Counts, BAM, Reports) into HPC DME.',
+                                            description = 'Metadata requirements for pushing \
+                                            processed data into HPC DME differ from raw data.')
+    # Input FastQ files
+    subparser_processed.add_argument('-i', '--input',
+                                # Check if the file exists and if it is readable
+                                type = lambda file: permissions(parser, file, os.R_OK),
+                                required = True,
+                                nargs = '+',
+                                help = 'Required: Input processed file to be uploaded. \
+                                        One file must be provided. \
+                                        Example: --input .tests/*.bam')
+    # Output Collection in HPC DME
+    subparser_processed.add_argument('-o', '--output',
+                                type = str,
+                                required = True,
+                                help = 'Required: Path/Collection in HPC DME to archive the file. \
+                                        This is the absolute PATH in HPC DME where the file will be archived. \
+                                        Please note each collection MUST be intialized prior to running push2dme. \
+                                        Example: --output /CCBR_EXT_Archive/PI_Lab/Project/Primary_Analysis')
+    # Dry-run (do not execute upload)
+    subparser_processed.add_argument('-n', '--dry-run',
+                                action = 'store_true',
+                                required = False,
+                                default = False,
+                                help = 'Optional: Do not execute anything, \
+                                and only display what steps would be run [Default: False].')
+
+
+    # Define run() as handler for sub-parser
+    subparser_raw.set_defaults(func = raw)
+    subparser_processed.set_defaults(func = process)
+
+    # Parse command-line args
+    args = parser.parse_args()
+    return args
+
+
+def main():
+
+    # Collect args for sub-command
+    args = parsed_arguments()
+
+    # Mediator method to call sub-command's set handler function
+    args.func(args)
+
+
+if __name__ == '__main__':
+    main()
