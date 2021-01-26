@@ -24,8 +24,8 @@ jobs:
       - run: cat testing/DME/data_dictionary.json
       - run: cat testing/DME/project.json
       - run: cat testing/DME/sample.json
-      - run: cat testing/DME/meta/PI_Lab_CurtisHarris_LHC_collection.json
-      - run: cat testing/DME/meta/PI_Lab_CurtisHarris_LHC/Project_JaneDoe_ATRF-SF_212RNA-seq_2020-09-14_collection.json
-      - run: cat testing/DME/meta/PI_Lab_CurtisHarris_LHC/Project_JaneDoe_ATRF-SF_212RNA-seq_2020-09-14/rData_AC633_SILNM3_collection.json
+      - run: cat testing/DME/meta/PI_Lab_CurtisHarris_LHC.metadata.json
+      - run: cat testing/DME/meta/PI_Lab_CurtisHarris_LHC/Project_JaneDoe_ATRF-SF_212RNA-seq_2020-09-14.metadata.json
+      - run: cat testing/DME/meta/PI_Lab_CurtisHarris_LHC/Project_JaneDoe_ATRF-SF_212RNA-seq_2020-09-14/rData_AC633_SILNM3.metadata.json
       - run: find testing/DME/ -iname '*.json' -type f -exec md5sum {} \; 
       - run: tree testing/DME/
