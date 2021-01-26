@@ -1,4 +1,4 @@
-name: ci
+name: Lint-and-test
 on:
   push:
     branches:
@@ -25,9 +25,7 @@ jobs:
       - run: cat testing/DME/project.json
       - run: cat testing/DME/sample.json
       - run: cat testing/DME/meta/PI_Lab_CurtisHarris_LHC_collection.json
-      - run: cat testing/DME/meta/Project_JaneDoe_ATRF-SF_212RNA-seq_2020-09-14_collection.json
-      - run: cat testing/DME/meta/Project_JaneDoe_GEO_47Microarray_2020-09-14_collection.json
-      - run: cat testing/DME/meta/rData_AC633_SILNM3_collection.json
-      - run: md5sum testing/DME/logs/*.txt
-      - run: md5sum testing/DME/*.json
-      - run: md5sum testing/DME/meta/*.json
+      - run: cat testing/DME/meta/PI_Lab_CurtisHarris_LHC/Project_JaneDoe_ATRF-SF_212RNA-seq_2020-09-14_collection.json
+      - run: cat testing/DME/meta/PI_Lab_CurtisHarris_LHC/Project_JaneDoe_ATRF-SF_212RNA-seq_2020-09-14/rData_AC633_SILNM3_collection.json
+      - run: find testing/DME/ -iname '*.json' -type f -exec md5sum {} \; 
+      - run: tree testing/DME/
