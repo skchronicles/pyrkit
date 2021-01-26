@@ -306,7 +306,11 @@ def _project(parsed_data, template, opath, dme_vault, pid):
                 origin = origin.replace(" ","-")
                 method = method.replace(" ","-")
                 sdate = sdate.split()[0]
-                collection_name = 'Project_{}_{}_{}_{}{}_{}'.format(poc, origin, pid, nsamples, method, sdate)
+
+                collection_name = 'Project_{}_{}_{}{}_{}'.format(poc, origin, nsamples, method, sdate)
+
+                if pid:
+                    collection_name = 'Project_{}_{}_{}_{}{}_{}'.format(poc, origin, pid, nsamples, method, sdate)
 
                 outfile = os.path.join(opath, '{}.metadata.json'.format(collection_name))
                 path_exists(os.path.join(opath, '{}'.format(collection_name)))
