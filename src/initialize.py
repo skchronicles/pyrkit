@@ -65,6 +65,11 @@ Options:
 
     [-h, --help]                  Displays usage and help information for the script.
 
+    [-p, --project-id]            Type [String]: Optional Project ID. This could be a
+                                  ccbr project id if it has been assigned a project or
+                                  a NAS request id.
+                                  Example: 'ccbr-123'
+
 Example:
     $ python initialize.py /scratch/DME/ /scratch/DME/metadata/ CCBR_EXT_Archive -c
 
@@ -78,6 +83,7 @@ def args(argslist):
     # Input list of filenames to parse
     user_args = argslist[1:]
     convert = False
+    project_id = ''
 
     # Check for optional args
     if '-h' in user_args or '--help' in user_args:
@@ -85,10 +91,23 @@ def args(argslist):
         sys.exit(0)
 
     # Check for convert boolean flag
-    elif '-c' in user_args or '--convert' in user_args:
+    if '-c' in user_args or '--convert' in user_args:
         print('Converting field names to dme field format.')
         user_args = [arg for arg in user_args if arg not in ['-c', '--convert']]
         convert = True
+
+    # Check for optional Project ID
+    if '-p' in user_args or '--project-id' in user_args:
+        for i in range(len(user_args)):
+            if user_args[i] in ['-p', '--project-id']:
+                option_index = i
+                try:
+                    project_id = user_args[option_index+1]
+                except IndexError:
+                    print("\n{}Error: Failed to provide a value to '-p' argument{}".format(*config['.error']), file=sys.stderr)
+                    sys.exit(1)
+                break
+        user_args = [arg for arg in user_args if arg not in ['-p', '--project-id', project_id]]
 
     # Check to see if user provided input files to parse
     if len(user_args) != 3:
@@ -96,7 +115,7 @@ def args(argslist):
         print(help())
         sys.exit(1)
 
-    return [convert] +user_args
+    return [project_id.upper(), convert] + user_args
 
 
 def path_exists(path):
@@ -141,7 +160,7 @@ def validate(user_inputs):
     required = config[".required"]
     valid_vaults = config[".vaults"]
 
-    convert, ipath, opath, vault = user_inputs
+    pid, convert, ipath, opath, vault = user_inputs
     file_w_path = []
 
     assert vault in valid_vaults, "{} is not a vaild DME vault! Please choose from one of the following: {}".format(vault, valid_vaults)
@@ -212,7 +231,7 @@ def separate(sep, extractions):
     return extracted
 
 
-def generate(parsed_data, template, opath, dme_vault, helper):
+def generate(parsed_data, template, opath, dme_vault, helper, **kwargs):
     """Generates collection and data-object metadata needed for DME upload.
     For each collection (directory) and data-object (file), an output file is
     generated in JSON format. 'opath' dictates where these files will be saved.
@@ -221,7 +240,7 @@ def generate(parsed_data, template, opath, dme_vault, helper):
     collection metadata json file.
     """
     template = json2dict(template)
-    collections = helper(parsed_data, template, opath, dme_vault)
+    collections = helper(parsed_data, template, opath, dme_vault, **kwargs)
 
     return collections
 
@@ -244,7 +263,8 @@ def _pi(parsed_data, template, opath, dme_vault, index=0):
     aff = aff.split()[-1].replace('(','').replace(')','')
     collection_name = 'PI_Lab_{}{}_{}'.format(first, last, aff)
 
-    outfile = os.path.join(opath, '{}_collection.json'.format(collection_name))
+    outfile = os.path.join(opath, '{}.metadata.json'.format(collection_name))
+    path_exists(os.path.join(opath, '{}'.format(collection_name)))
 
     # Save upload collection metadata data as JSON file
     with open(outfile, 'w') as file:
@@ -253,7 +273,7 @@ def _pi(parsed_data, template, opath, dme_vault, index=0):
     return {collection_name: outfile}
 
 
-def _project(parsed_data, template, opath, dme_vault):
+def _project(parsed_data, template, opath, dme_vault, pid):
     """Private helper function to generate(). Extracts Project metadata from parsed_data,
     adds it to the template, and writes it to a new file. Returns a dictionary containing
     collection information where [keys] are collection_name and values are the output
@@ -286,9 +306,11 @@ def _project(parsed_data, template, opath, dme_vault):
                 origin = origin.replace(" ","-")
                 method = method.replace(" ","-")
                 sdate = sdate.split()[0]
-                collection_name = 'Project_{}_{}_{}{}_{}'.format(poc, origin, nsamples, method, sdate)
+                collection_name = 'Project_{}_{}_{}_{}{}_{}'.format(poc, origin, pid, nsamples, method, sdate)
 
-                outfile = os.path.join(opath, '{}_collection.json'.format(collection_name))
+                outfile = os.path.join(opath, '{}.metadata.json'.format(collection_name))
+                path_exists(os.path.join(opath, '{}'.format(collection_name)))
+
                 subcollections[collection_name] = outfile
 
                 #Save upload collection metadata data as JSON file
@@ -316,7 +338,9 @@ def _sample(parsed_data, template, opath, dme_vault):
                 sname = parsed_data[sid]["sample_name"]
                 collection_name = 'rData_{}_{}'.format(sid, sname)
 
-                outfile = os.path.join(opath, '{}_collection.json'.format(collection_name))
+                outfile = os.path.join(opath, '{}.metadata.json'.format(collection_name))
+                path_exists(os.path.join(opath, '{}'.format(collection_name)))
+
                 subcollections[collection_name] = outfile
 
                 #Save upload collection metadata data as JSON file
@@ -330,7 +354,7 @@ def main():
 
     # @args(): Parses positional command-line args
     # @validate(): Checks if user inputs are vaild
-    data_dict, project_dict, sample_dict, convert, ipath, opath, vault = validate(args(sys.argv))
+    data_dict, project_dict, sample_dict, pid, convert, ipath, opath, vault = validate(args(sys.argv))
 
     # Output directory for collection and data-object metadata
     path_exists(opath)
@@ -353,10 +377,14 @@ def main():
     pi_collects = generate(parsed_data=pi_dict, template=os.path.join(template_path, 'pi_lab_collection.json'), opath=opath, dme_vault=vault, helper=_pi)
 
     # Generate Project collection(s) metadata
-    project_collects = generate(parsed_data=project_dict, template=os.path.join(template_path, 'project_collection.json'), opath=opath, dme_vault=vault, helper=_project)
+    # Add MVD functionality later
+    # Need Project key in spreadsheet to map to samples
+    dme_prefix = os.path.join(opath, list(pi_collects.keys())[0])
+    project_collects = generate(parsed_data=project_dict, template=os.path.join(template_path, 'project_collection.json'), opath=dme_prefix, dme_vault=vault, helper=_project, pid=pid)
 
     # Generate Sample collection(s) metadata
-    sample_collects = generate(parsed_data=sample_dict, template=os.path.join(template_path, 'sample_collection.json'), opath=opath, dme_vault=vault, helper=_sample)
+    dme_prefix = os.path.join(dme_prefix, list(project_collects.keys())[0])
+    sample_collects = generate(parsed_data=sample_dict, template=os.path.join(template_path, 'sample_collection.json'), opath=dme_prefix, dme_vault=vault, helper=_sample)
 
 
 if __name__ == '__main__':
