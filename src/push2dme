@@ -111,7 +111,7 @@ def compressed(file_extension):
         DME controlled vocabulary for file compression status
     """
     data_compression = "Not Compressed"
-    if file in ["bz2", "gz", "bam", "xz", "rar", "tar", "tbz2", "tgz", "zip", "7z"]:
+    if file_extension in ["bz2", "gz", "bam", "xz", "rar", "tar", "tbz2", "tgz", "zip", "7z"]:
         data_compression = "Compressed"
 
     return data_compression
