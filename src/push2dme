@@ -194,7 +194,7 @@ def minimal_common_metadata(input_file, dme_path):
             },
             {
                 "attribute": "alias",
-                "value": os.path.abspath(input_file)
+                "value": os.path.realpath(os.path.abspath(input_file))
             },
             {
                 "attribute": "file_type",
@@ -202,7 +202,7 @@ def minimal_common_metadata(input_file, dme_path):
             },
             {
                 "attribute": "data_compression_status",
-                "value": compressed(sample.split('.')[-1].upper())
+                "value": compressed(sample.split('.')[-1].lower())
             },
             {
                 "attribute": "md5_checksum",
