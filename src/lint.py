@@ -309,10 +309,14 @@ def _parsed_sample(excel_df):
         # Check if header and clean
         if attr.lower() == 'sample id':
             header = _remove_trailing_nan(project_value_list)
+            sid_field = attr
             continue
 
-        for i in range(0,len(header),1):
-            yield attr, header[i], project_value_list[i]
+        for j in range(0,len(header),1):
+            yield attr, header[j], project_value_list[j]
+        else:
+            # Yield add Sample ID last
+            yield attr, sid_field, attr
 
 
 def sample(sheet, spreadsheet, log_route):
