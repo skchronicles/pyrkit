@@ -18,7 +18,7 @@ config = {
                 "pct_intronic_bases", "pct_utr_bases", "pct_intergenic_bases", "median_cv_coverage",
                 "median_5prime_to_3prime_bias", "median_5prime_bias", "median_3prime_bias",
                 "rRNA_percent_aligned",
-                "uni_vec_percent_aligned", "percent_antisense_strand", "percent_sense_strand", "median_tin", "flowcell_lanes"
+                "uni_vec_percent_aligned", "percent_antisense_strand", "percent_sense_strand", "median_tin", "flowcell_lanes", "TissueType"
             ]
         }
     },
@@ -42,6 +42,11 @@ config = {
         "typecast": {
             "median_tin": float
         }
+	},
+	"sample_group.txt": {
+        "delimeter": "\t",
+		"clean_sample_name": [],
+		"parse_column": ["Sample", "TissueType"],
 	},
 
 	"sample_flowcell_lanes.txt": {
