@@ -13,13 +13,12 @@ config = {
             ".output_preference": [
                 "Sample", "Encoding", "total_read_pairs", "trimmed_read_pairs",
                 "avg_sequence_length", "sequence_length", "gc_content", "percent_duplication",
-                "percent_aligned", "median_insert_size", "mean_insert_size", "mean_mapping_quality",
+                "percent_aligned","inner_distance_maxima", "median_insert_size", "mean_insert_size", "mean_mapping_quality",
                 "mean_coverage", "avg_aligned_read_length", "pct_mrna_bases", "pct_coding_bases",
                 "pct_intronic_bases", "pct_utr_bases", "pct_intergenic_bases", "median_cv_coverage",
                 "median_5prime_to_3prime_bias", "median_5prime_bias", "median_3prime_bias",
-                "human_percent_aligned", "mouse_percent_aligned", "bacteria_percent_aligned",
-                "fungi_percent_aligned", "virus_percent_aligned", "rRNA_percent_aligned",
-                "uni_vec_percent_aligned", "percent_antisense_strand", "percent_sense_strand"
+                "rRNA_percent_aligned",
+                "uni_vec_percent_aligned", "percent_antisense_strand", "percent_sense_strand", "median_tin", "flowcell_lanes"
             ]
         }
     },
@@ -34,6 +33,21 @@ config = {
         "typecast": {
             "total_read_pairs": int
         }
+        },
+
+	"rseqc_median_tin.txt": {
+        "delimeter": "\t",
+		"clean_sample_name": [],
+		"parse_column": ["Sample", "median_tin"],
+        "typecast": {
+            "median_tin": float
+        }
+	},
+
+	"sample_flowcell_lanes.txt": {
+        "delimeter": "\t",
+		"clean_sample_name": [],
+		"parse_column": ["Sample", "flowcell_lanes"],
 	},
 
 	"multiqc_fastqc.txt": {
@@ -55,24 +69,14 @@ config = {
 	"multiqc_fastq_screen.txt": {
         "delimeter": "\t",
 		"clean_sample_name": ["^FQscreen \\| ", "^FQscreen2 \\| ", "_screen$", ".trim$", ".R1$", ".R2$"],
-		"parse_column": ["Sample", "Uni_Vec percentage", "rRNA percentage", "Human percentage", "Mouse percentage", "Bacteria percentage", "Fungi percentage", "Virus percentage"],
+		"parse_column": ["Sample", "Uni_Vec percentage", "rRNA percentage"],
 		"rename_field": {
 			"Uni_Vec percentage": "uni_vec_percent_aligned",
-			"rRNA percentage": "rRNA_percent_aligned",
-            "Human percentage": "human_percent_aligned",
-            "Mouse percentage": "mouse_percent_aligned",
-            "Bacteria percentage": "bacteria_percent_aligned",
-            "Fungi percentage": "fungi_percent_aligned",
-            "Virus percentage": "virus_percent_aligned"
+			"rRNA percentage": "rRNA_percent_aligned"
 		},
         "typecast": {
             "uni_vec_percent_aligned": float,
-            "rRNA_percent_aligned": float,
-            "human_percent_aligned": float,
-            "mouse_percent_aligned": float,
-            "bacteria_percent_aligned": float,
-            "fungi_percent_aligned": float,
-            "virus_percent_aligned": float
+            "rRNA_percent_aligned": float
         }
 	},
 
@@ -136,6 +140,18 @@ config = {
             "percent_antisense_strand": 100.0
         },
 	},
+
+        "mqc_rseqc_inner_distance_plot_Percentages_parsed.txt": {
+        "delimeter": "\t",
+                "clean_sample_name": ["^RSeQC \\| ", ".strand.info$",".info.strand$", "^output.", ".p2$"],
+                "parse_column": ["Sample", "Inner_Dist_Maxima"],
+                "rename_field": {
+                        "Inner_Dist_Maxima": "inner_distance_maxima"
+                },
+        "typecast": {
+            "inner_distance_maxima": float
+        },
+        },
 
 	"multiqc_star.txt": {
         "delimeter": "\t",
@@ -434,7 +450,7 @@ def main():
         pass
 
     # Write to file
-    df.to_csv('multiqc_matrix.txt', index = False, sep='\t')
+    df.to_csv('multiqc_matrix.tsv', index = False, sep='\t')
 
 
 if __name__ == '__main__':
