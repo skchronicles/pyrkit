@@ -69,6 +69,10 @@ Options:
                                   ccbr project id if it has been assigned a project or
                                   a NAS request id.
                                   Example: 'ccbr-123'
+    [-m, --sample-metdata]        Type [File]: Optional TSV file containing additional sample
+                                  metadata. This analysis-specific, quality-control metadata
+                                  is calculated for each sample by aggregating MultiQC output.
+                                  Example: 'multiqc_matrix.tsv'
 
 Example:
     $ python initialize.py /scratch/DME/ /scratch/DME/metadata/ CCBR_EXT_Archive -c
@@ -84,6 +88,7 @@ def args(argslist):
     user_args = argslist[1:]
     convert = False
     project_id = ''
+    metafile = ''
 
     # Check for optional args
     if '-h' in user_args or '--help' in user_args:
@@ -109,13 +114,27 @@ def args(argslist):
                 break
         user_args = [arg for arg in user_args if arg not in ['-p', '--project-id', project_id]]
 
+    # Check for optional Project ID
+    if '-m' in user_args or '--sample-metadata' in user_args:
+        for i in range(len(user_args)):
+            if user_args[i] in ['-m', '--sample-metadata']:
+                option_index = i
+                try:
+                    metafile = user_args[option_index+1]
+                except IndexError:
+                    print("\n{}Error: Failed to provide a metadata file to '-m' argument{}".format(*config['.error']), file=sys.stderr)
+                    sys.exit(1)
+                break
+        user_args = [arg for arg in user_args if arg not in ['-m', '--sample-metadata', metafile]]
+
+
     # Check to see if user provided input files to parse
     if len(user_args) != 3:
         print("\n{}Error: Failed to provide all required arguments{}".format(*config['.error']), file=sys.stderr)
         print(help())
         sys.exit(1)
 
-    return [project_id.upper(), convert] + user_args
+    return [project_id.upper(), metafile, convert] + user_args
 
 
 def path_exists(path):
@@ -160,7 +179,7 @@ def validate(user_inputs):
     required = config[".required"]
     valid_vaults = config[".vaults"]
 
-    pid, convert, ipath, opath, vault = user_inputs
+    pid, metafile, convert, ipath, opath, vault = user_inputs
     file_w_path = []
 
     assert vault in valid_vaults, "{} is not a vaild DME vault! Please choose from one of the following: {}".format(vault, valid_vaults)
@@ -169,7 +188,12 @@ def validate(user_inputs):
         file_exists(os.path.join(ipath, file))
         file_w_path.append(os.path.join(ipath, file))
 
+    # Check file optional metadata file actually exists
+    if metafile:
+        file_exists(metafile)
+
     return file_w_path + user_inputs
+
 
 def field2DME(data, data_catelog):
     """Converts common field names with dme field names. Returns a dictionary of
@@ -188,6 +212,33 @@ def field2DME(data, data_catelog):
             converted[collection_type][dme_name] = user_value
 
     return converted
+
+
+def tsv2dict(file, ignore=[0,-1]):
+    """Reads in TSV file into memory as a dictionary while ignore specific indices.
+    Checks to see if file exists or is accessible before reading in the file.
+    where dict[sample] = [{attr: value}, {}, ...]
+    """
+    file_exists(file)
+    metadata = {}
+
+    with open(file, 'r') as f:
+        header = next(f).split('\t')
+        # Ignore First and Last Fields
+        for i in ignore: header.pop(i)
+        for line in f:
+            linelist = line.split('\t')
+            sample = linelist[0]
+
+            # Ignore First and Last Fields
+            for i in ignore: linelist.pop(i)
+            if sample not in metadata:
+                metadata[sample] = []
+            for i in range(len(linelist)):
+                 metadata[sample].append({"attribute": header[i], "value": linelist[i]})
+
+    return metadata
+
 
 def json2dict(file):
     """Reads in JSON file into memory as a dictionary. Checks to see if
@@ -324,12 +375,13 @@ def _project(parsed_data, template, opath, dme_vault, pid):
     return subcollections
 
 
-def _sample(parsed_data, template, opath, dme_vault):
-    """Private helper function to generate(). Extracts Project metadata from parsed_data,
+def _sample(parsed_data, template, opath, dme_vault, additional_metadata = {}):
+    """Private helper function to generate(). Extracts Sample metadata from parsed_data,
     adds it to the template, and writes it to a new file. Returns a dictionary containing
     collection information where [keys] are collection_name and values are the output
     filename for parsed metadata. The relationship between each project request to
-    rawdata sample collection(s) is '1:M'.
+    rawdata sample collection(s) is '1:M'. Also merges additional metadata if provided,
+    see tsv2dict() for generating the expected data structure.
     """
     subcollections = {}
 
@@ -340,6 +392,13 @@ def _sample(parsed_data, template, opath, dme_vault):
                     temp['metadataEntries'].append({'attribute': field, 'value': userdata})
             else:
                 sname = parsed_data[sid]["sample_name"]
+                # Add optional runtime metadata
+                if additional_metadata:
+                    try:
+                        metarun = additional_metadata[sname]
+                        temp['metadataEntries'].extend(metarun)
+                    except KeyError:
+                        pass # Edge-case: no runtime metadata for that sample
                 collection_name = 'rData_{}_{}'.format(sid, sname)
 
                 outfile = os.path.join(opath, '{}.metadata.json'.format(collection_name))
@@ -358,7 +417,7 @@ def main():
 
     # @args(): Parses positional command-line args
     # @validate(): Checks if user inputs are vaild
-    data_dict, project_dict, sample_dict, pid, convert, ipath, opath, vault = validate(args(sys.argv))
+    data_dict, project_dict, sample_dict, pid, metafile, convert, ipath, opath, vault = validate(args(sys.argv))
 
     # Output directory for collection and data-object metadata
     path_exists(opath)
@@ -367,6 +426,11 @@ def main():
     data_dict = json2dict(data_dict)
     pi_dict, project_dict = separate(json2dict(project_dict), ["PI_Lab", "Project"])
     sample_dict = json2dict(sample_dict)
+
+    # Convert optional metadata file from TSV to dictionary
+    metarun = {}
+    if metafile:
+        metarun = tsv2dict(metafile)
 
     # Covert field from common name to dme_name
     if convert:
@@ -388,7 +452,7 @@ def main():
 
     # Generate Sample collection(s) metadata
     dme_prefix = os.path.join(dme_prefix, list(project_collects.keys())[0])
-    sample_collects = generate(parsed_data=sample_dict, template=os.path.join(template_path, 'sample_collection.json'), opath=dme_prefix, dme_vault=vault, helper=_sample)
+    sample_collects = generate(parsed_data=sample_dict, template=os.path.join(template_path, 'sample_collection.json'), opath=dme_prefix, dme_vault=vault, helper=_sample, additional_metadata=metarun)
 
 
 if __name__ == '__main__':
