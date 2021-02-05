@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function, division
-import sys, os, json
+import sys, os, json, re
 
 # Configuration for defining valid sheets and other default values
 config = {
@@ -73,6 +73,11 @@ Options:
                                   metadata. This analysis-specific, quality-control metadata
                                   is calculated for each sample by aggregating MultiQC output.
                                   Example: 'multiqc_matrix.tsv'
+    [-a, --analysis-metdata]      Type [File]: Optional TSV file containing analysis
+                                  metadata. The metadata in this file is used to instantiate
+                                  a Primary Analysis collection. It contains information about
+                                  the pipeline and its inputs.
+                                  Example: 'runinfo.txt'
 
 Example:
     $ python initialize.py /scratch/DME/ /scratch/DME/metadata/ CCBR_EXT_Archive -c
@@ -89,6 +94,7 @@ def args(argslist):
     convert = False
     project_id = ''
     metafile = ''
+    analysisfile = ''
 
     # Check for optional args
     if '-h' in user_args or '--help' in user_args:
@@ -114,7 +120,7 @@ def args(argslist):
                 break
         user_args = [arg for arg in user_args if arg not in ['-p', '--project-id', project_id]]
 
-    # Check for optional Project ID
+    # Check for optional sample metadata
     if '-m' in user_args or '--sample-metadata' in user_args:
         for i in range(len(user_args)):
             if user_args[i] in ['-m', '--sample-metadata']:
@@ -127,6 +133,18 @@ def args(argslist):
                 break
         user_args = [arg for arg in user_args if arg not in ['-m', '--sample-metadata', metafile]]
 
+    # Check for optional piprline or analysis metadata
+    if '-a' in user_args or '--analysis-metadata' in user_args:
+        for i in range(len(user_args)):
+            if user_args[i] in ['-a', '--analysis-metadata']:
+                option_index = i
+                try:
+                    analysisfile = user_args[option_index+1]
+                except IndexError:
+                    print("\n{}Error: Failed to provide a metadata file to '-a' argument{}".format(*config['.error']), file=sys.stderr)
+                    sys.exit(1)
+                break
+        user_args = [arg for arg in user_args if arg not in ['-a', '--analysis-metadata', analysisfile]]
 
     # Check to see if user provided input files to parse
     if len(user_args) != 3:
@@ -134,7 +152,7 @@ def args(argslist):
         print(help())
         sys.exit(1)
 
-    return [project_id.upper(), metafile, convert] + user_args
+    return [project_id.upper(), metafile, analysisfile, convert] + user_args
 
 
 def path_exists(path):
@@ -179,7 +197,7 @@ def validate(user_inputs):
     required = config[".required"]
     valid_vaults = config[".vaults"]
 
-    pid, metafile, convert, ipath, opath, vault = user_inputs
+    pid, metafile, analysisfile, convert, ipath, opath, vault = user_inputs
     file_w_path = []
 
     assert vault in valid_vaults, "{} is not a vaild DME vault! Please choose from one of the following: {}".format(vault, valid_vaults)
@@ -191,6 +209,8 @@ def validate(user_inputs):
     # Check file optional metadata file actually exists
     if metafile:
         file_exists(metafile)
+    if analysisfile:
+        file_exists(analysisfile)
 
     return file_w_path + user_inputs
 
@@ -214,8 +234,8 @@ def field2DME(data, data_catelog):
     return converted
 
 
-def tsv2dict(file, ignore=[0,-1]):
-    """Reads in TSV file into memory as a dictionary while ignore specific indices.
+def mqc2dict(file, ignore=[0,-1]):
+    """Reads in MultiQC TSV file into memory as a dictionary while ignore specific indices.
     Checks to see if file exists or is accessible before reading in the file.
     where dict[sample] = [{attr: value}, {}, ...]
     """
@@ -236,6 +256,43 @@ def tsv2dict(file, ignore=[0,-1]):
                 metadata[sample] = []
             for i in range(len(linelist)):
                  metadata[sample].append({"attribute": header[i], "value": linelist[i]})
+
+    return metadata
+
+
+def tsv2dict(file, key_index = 0, value_index = 1, header = False):
+    """Reads in Run TSV file into memory as a dictionary.
+    Checks to see if file exists or is accessible before reading in the file.
+    where dict[key_index] = value_index
+    """
+    file_exists(file)
+    metadata = {}
+    samples = []
+
+    with open(file, 'r') as f:
+        if header:
+            header = next(f).split('\t')
+        for line in f:
+            linelist = line.rstrip('\n').split('\t')
+            dme_attribute = linelist[key_index]
+
+            # Check for edge-case where value DNE
+            try: dme_value = linelist[value_index]
+            except IndexError: dme_value = "Unknown"
+
+            if dme_attribute == 'file':
+                samples.append(dme_value)
+                continue
+
+            metadata[dme_attribute] = dme_value
+
+    samples = sorted([re.split('\.R[12]\.fastq\.gz', os.path.basename(s))[0] for s in set(samples)])
+    samples = ",".join(samples)
+
+    # Orcale VARCHAR limit is 4000
+    # Add input_samples_list dme attribute if less than 4000 characters
+    if len(samples) < 4000:
+        metadata['input_samples_list'] = samples
 
     return metadata
 
@@ -417,7 +474,7 @@ def main():
 
     # @args(): Parses positional command-line args
     # @validate(): Checks if user inputs are vaild
-    data_dict, project_dict, sample_dict, pid, metafile, convert, ipath, opath, vault = validate(args(sys.argv))
+    data_dict, project_dict, sample_dict, pid, metafile, analysisfile, convert, ipath, opath, vault = validate(args(sys.argv))
 
     # Output directory for collection and data-object metadata
     path_exists(opath)
@@ -430,7 +487,11 @@ def main():
     # Convert optional metadata file from TSV to dictionary
     metarun = {}
     if metafile:
-        metarun = tsv2dict(metafile)
+        metarun = mqc2dict(metafile)
+
+    pipelinerun = {}
+    if analysisfile:
+        pipelinerun = tsv2dict(analysisfile)
 
     # Covert field from common name to dme_name
     if convert:
