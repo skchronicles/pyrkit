@@ -470,6 +470,48 @@ def _sample(parsed_data, template, opath, dme_vault, additional_metadata = {}):
     return subcollections
 
 
+def _analysis(parsed_data, template, opath, dme_vault):
+    """Private helper function to generate(). Extracts Analysis metadata from parsed_data,
+    adds it to the template, and writes it to a new file. Returns a dictionary containing
+    collection information where [keys] are collection_name and values are the output
+    filename for parsed metadata. The relationship between each project request to
+    analysis collection is '1:1'; however, it is possible to have multiple analyses
+    for a given project.
+    """
+    required = ['number_of_cases', 'method', 'assembly_name', 'gtf_ver', 'md5_all_inputs_serial']
+    temp = {"metadataEntries": [{"attribute": "collection_type", "value": "Analysis"}]}
+    subcollections = {}
+    missing = []
+
+    for field, userdata in parsed_data.items():
+        temp['metadataEntries'].append({'attribute': field, 'value': userdata})
+
+    # Check for required fields or dme attributes
+    for dme_attr in required:
+        try:
+            require = parsed_data[dme_attr]
+        except KeyError as e:
+            missing.append(str(e))
+    else:
+        if missing:
+            raise LookupError("""\n\nFatal: Failed to provide all required mandatory metadata for Analysis collection!
+            Missing the following required DME attributes: {}
+            Please update the provided analysis metadata file before running again!""".format(",".join(missing)))
+
+    collection_name = 'Primary_Analysis_{}{}_{}_{}_{}'.format(parsed_data['number_of_cases'], parsed_data['method'], parsed_data['assembly_name'], parsed_data['gtf_ver'], parsed_data['md5_all_inputs_serial'])
+
+    outfile = os.path.join(opath, '{}.metadata.json'.format(collection_name))
+    path_exists(os.path.join(opath, '{}'.format(collection_name)))
+
+    subcollections[collection_name] = outfile
+
+    #Save upload collection metadata data as JSON file
+    with open(outfile, 'w') as file:
+        json.dump(temp, file, sort_keys=True, indent=4)
+
+    return subcollections
+
+
 def main():
 
     # @args(): Parses positional command-line args
@@ -488,10 +530,6 @@ def main():
     metarun = {}
     if metafile:
         metarun = mqc2dict(metafile)
-
-    pipelinerun = {}
-    if analysisfile:
-        pipelinerun = tsv2dict(analysisfile)
 
     # Covert field from common name to dme_name
     if convert:
@@ -514,6 +552,14 @@ def main():
     # Generate Sample collection(s) metadata
     dme_prefix = os.path.join(dme_prefix, list(project_collects.keys())[0])
     sample_collects = generate(parsed_data=sample_dict, template=os.path.join(template_path, 'sample_collection.json'), opath=dme_prefix, dme_vault=vault, helper=_sample, additional_metadata=metarun)
+
+    # Generate Analysis collection metadata
+    # If optional runtime metadata provided
+    analysis_dict = {}
+    if analysisfile:
+        analysis_dict = tsv2dict(analysisfile)
+        analysis_collects = generate(parsed_data=analysis_dict, template=os.path.join(template_path, 'analysis_collection.json'), opath=dme_prefix, dme_vault=vault, helper=_analysis)
+
 
 
 if __name__ == '__main__':
