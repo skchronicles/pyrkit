@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-"""push2dme: pushes files on our local filesystem to object storage
+"""meta: generates metadata for file uploads into object storage
 About:
       This program generates the required metedata to push local files into object
     storage in HPC DME for archival purposes. This program ensures that mandatory
@@ -10,9 +10,13 @@ About:
     '--output' option must exist or must be created in HPC DME prior to running
     this program.
 USAGE:
-	$ push2dme <raw|processed> [OPTIONS]
+	$ meta <sample|combined> [OPTIONS]
 Example:
-    $ push2dme raw --input /path/to/data/*.{bam,tsv,html} --output /CCBR_EXT_Archive/PI_Lab_KennethAldape_LP/Project_ZiedAbdullaev_KennethAldape_Brain_Tumor_Cohort_465RNA-seq_2020-12-08/Primary_Analysis_RNA-seq_465samples_hg38_35
+    $ meta sample --input /path/to/data/WType1.{bam,R1.fastq.gz} \
+                  --sample-name WType1 \
+                  --output /CCBR_Archive/PI_Lab_KenAda_LP/Project_JoeJi_KenAda_Brain_465RNA-seq_2020-12-08/Sample_WT1_WType1
+    $ meta combined --input /path/to/data/*.{tsv,html,txt} \
+                    --output /CCBR_Archive/PI_Lab_KenAda_LP/Project_JoeJi_KenAda_Brain_465RNA-seq_2020-12-08/Primary_Analysis_RNA-seq_465samples_hg38_35
 """
 
 from __future__ import print_function
@@ -20,7 +24,7 @@ import sys, os, json
 
 
 __author__ = 'Skyler Kuhn'
-__version__ = 'v0.0.1'
+__version__ = 'v0.1.0'
 __email__ = 'kuhnsa@nih.gov'
 
 
@@ -153,7 +157,7 @@ def ftype(filename):
 
 
 def minimal_common_metadata(input_file, dme_path):
-    """Get common required metadata across raw and processed data.
+    """Get common required metadata across sample and combined data.
     @param input_file <str>:
         Input file on local filesystem to archive
     @param dme_path <str>:
@@ -185,10 +189,6 @@ def minimal_common_metadata(input_file, dme_path):
                 "value": "CCBR"
             },
             {
-                "attribute": "sample_name",
-                "value": sample
-            },
-            {
                 "attribute": "object_name",
                 "value": os.path.join(dme_path, sample)
             },
@@ -216,31 +216,56 @@ def minimal_common_metadata(input_file, dme_path):
     return metadata
 
 
-def process(sub_args):
-    """Generate required metadata and push/archives processed data (bams, counts, reports)
+def sample(sub_args):
+    """Generates required metadata single sample data/files (bams, fastqs)
     into HPC DME.
     @param sub_args <parser.parse_args() object>:
-        Parsed arguments for raw sub-command
+        Parsed arguments for sample sub-command
     """
 
     for file in sub_args.input:
         metadata = minimal_common_metadata(input_file = file, dme_path = sub_args.output)
+        if sub_args.sample_name:
+            metadata["metadataEntries"].append({"attribute": "sample_name", "value": str(sub_args.sample_name)})
+        if sub_args.analysis_id:
+            metadata["metadataEntries"].append({"attribute": "md5_all_inputs", "value": str(sub_args.analysis_id)})
+            try:
+                serial_md5 = "{}-{}-{}".format(str(sub_args.analysis_id[:3]),
+                    str(sub_args.analysis_id[round(len(sub_args.analysis_id)/2):(round(len(sub_args.analysis_id)/2))+2]),
+                    str(sub_args.analysis_id[-4:]))
+                metadata["metadataEntries"].append({"attribute": "md5_all_inputs_serial", "value": str(serial_md5)})
+            except IndexError:
+                pass
+        if sub_args.dme_analysis_collection:
+            metadata["metadataEntries"].append({"attribute": "analysis_collection", "value": str(sub_args.dme_analysis_collection)})
         output_file = os.path.abspath(file) + ".metadata.json"
         generate_json(metadata = metadata, output_filename = output_file)
 
     return
 
 
-def raw(sub_args):
-    """Generate required metadata and push/archives raw data (FastQ) into HPC DME.
-    The metadata requirements for pushing rawdata into HPC DME differ from processed
-    data. This function will extract metadata from the provided FastQ file prior
-    to upload into DME.
+def combined(sub_args):
+    """Generates required metadata for multi-sample data/files (Report, Counts Matrix)
+    into HPC DME. The metadata requirements for pushing multi-sample files into HPC DME
+    differ from single sample data.
     @param sub_args <parser.parse_args() object>:
-        Parsed arguments for raw sub-command
+        Parsed arguments for sample sub-command
     """
-    # Add steps to parse fastq files and flowcell_id, lane, and run information
-    sys.exit('Feature to be implemented soon! Please contact {} for more information.'.format(__author__))
+    for file in sub_args.input:
+        metadata = minimal_common_metadata(input_file = file, dme_path = sub_args.output)
+        if sub_args.analysis_id:
+            metadata["metadataEntries"].append({"attribute": "md5_all_inputs", "value": str(sub_args.analysis_id)})
+            try:
+                serial_md5 = "{}-{}-{}".format(str(sub_args.analysis_id[:3]),
+                    str(sub_args.analysis_id[round(len(sub_args.analysis_id)/2):(round(len(sub_args.analysis_id)/2))+2]),
+                    str(sub_args.analysis_id[-4:]))
+                metadata["metadataEntries"].append({"attribute": "md5_all_inputs_serial", "value": str(serial_md5)})
+            except IndexError:
+                pass
+        output_file = os.path.abspath(file) + ".metadata.json"
+        generate_json(metadata = metadata, output_filename = output_file)
+
+    return
 
 
 def parsed_arguments():
@@ -249,9 +274,9 @@ def parsed_arguments():
     import argparse
 
     # Create a top-level parser
-    parser = argparse.ArgumentParser(description = 'push2dme: \
-                                                    a utility to push local files \
-                                                    into HPC DME object storage.')
+    parser = argparse.ArgumentParser(description = 'meta: \
+                                                    a utility to generate metadata for local files \
+                                                    prior to uploading into object storage.')
 
     # Adding Verison information
     parser.add_argument('--version', action = 'version', version='%(prog)s {}'.format(__version__))
@@ -259,74 +284,95 @@ def parsed_arguments():
     # Create sub-command parser
     subparsers = parser.add_subparsers()
 
-    # Options for the "raw" sub-command
-    subparser_raw = subparsers.add_parser('raw',
-                                            help = 'Pushes raw data (FastQ files) into HPC DME.',
+    # Options for the "sample" sub-command
+    subparser_sample = subparsers.add_parser('sample',
+                                            help = 'Generates required single sample metadata (FastQ and BAM) \
+                                            for uploading into object storage.',
                                             description = 'Metadata requirements for pushing \
-                                            raw data into HPC DME differ from processed data. This ultility \
-                                            will collect information within the FastQ files such as flowcell, \
-                                            lanes, and run number.')
+                                            single sample data into object storage differ from multi-sample data.')
     # Input FastQ files
-    subparser_raw.add_argument('-i', '--input',
+    subparser_sample.add_argument('-i', '--input',
                                 # Check if the file exists and if it is readable
                                 type = lambda file: permissions(parser, file, os.R_OK),
                                 required = True,
                                 nargs = '+',
-                                help = 'Required: Input FastQ file to be uploaded. \
-                                        One FastQ file must be provided. \
+                                help = 'Required: Input single sample file to be uploaded (i.e. FastQ or BAM). \
+                                        One file must be provided. \
                                         Example: --input *.fastq.gz')
     # Output Collection in HPC DME
-    subparser_raw.add_argument('-o', '--output',
+    subparser_sample.add_argument('-o', '--output',
                                 type = str,
                                 required = True,
                                 help = 'Required: Path/Collection in HPC DME to archive the file. \
                                         This is the absolute PATH in HPC DME where the file will be archived. \
-                                        Please note each collection MUST be intialized prior to running push2dme. \
-                                        Example: --output /Archive/PI_Lab/Project/Primary_Analysis')
+                                        Please note each collection MUST be intialized prior to running meta. \
+                                        Example: --output /Archive/PI_Lab/Project/Sample')
 
-    # Dry-run (do not execute upload)
-    subparser_raw.add_argument('-n', '--dry-run',
-                                action = 'store_true',
+    # Strip extension from filename
+    subparser_sample.add_argument('-s', '--sample-name',
+                                type = str,
                                 required = False,
-                                default = False,
-                                help = 'Optional: Do not execute anything, \
-                                and only display what steps would be run [Default: False].')
+                                help = 'Optional: Sample name the file is associated with. \
+                                        This is the name of the sample that the file is associated with, \
+                                        any file extensions should be remove from this string. \
+                                        Example: --sample-name WType1')
 
+    # Primary Analysis ID associated with a Sample
+    subparser_sample.add_argument('-a', '--analysis-id',
+                                type = str,
+                                required = False,
+                                help = 'Optional: Primary Analysis ID of the Pipeline which generated the input files. \
+                                        The Primary Analysis ID is a unique identifer for a given pipeline run. This unique \
+                                        identifer is calculated by find the MD5 of all the pipeline inputs.\
+                                        Example: --analysis-id 26071405f2f1c3a6f71d4141edb208e2')
 
-    # Options for the "processed" sub-command
-    subparser_processed = subparsers.add_parser('processed',
-                                            help = 'Pushes processed data (Counts, BAM, Reports) into HPC DME.',
+    # Primary Analysis Collection associated with a Sample
+    subparser_sample.add_argument('-d', '--dme-analysis-collection',
+                                type = str,
+                                required = False,
+                                help = 'Optional: DME Primary Analysis Collection Path associated with a sample. \
+                                        A Primary Analysis collection contains multi-sample aggregate data such as \
+                                        a counts matrix or reports. This field represents the absolute path in HPC \
+                                        DME to a given samples primary analysis results.\
+                                        Example: --dme-analysis-collection /CCBR_EXT_Archive/PI_Lab/Project/Primary_Analysis')
+
+    # Options for the "combined" sub-command
+    subparser_combined = subparsers.add_parser('combined',
+                                            help = 'Generates required multi-sample metadata  \
+                                            (Counts Matrix, Reports, Summary file) for uploading \
+                                            into object storage.',
                                             description = 'Metadata requirements for pushing \
-                                            processed data into HPC DME differ from raw data.')
-    # Input FastQ files
-    subparser_processed.add_argument('-i', '--input',
+                                            multi-sample data into object storage differ from per sample data.')
+    # Input Multi-sample data files
+    subparser_combined.add_argument('-i', '--input',
                                 # Check if the file exists and if it is readable
                                 type = lambda file: permissions(parser, file, os.R_OK),
                                 required = True,
                                 nargs = '+',
-                                help = 'Required: Input processed file to be uploaded. \
+                                help = 'Required: Input combined file to be uploaded. \
                                         One file must be provided. \
-                                        Example: --input .tests/*.bam')
+                                        Example: --input .tests/*.html')
     # Output Collection in HPC DME
-    subparser_processed.add_argument('-o', '--output',
+    subparser_combined.add_argument('-o', '--output',
                                 type = str,
                                 required = True,
                                 help = 'Required: Path/Collection in HPC DME to archive the file. \
                                         This is the absolute PATH in HPC DME where the file will be archived. \
-                                        Please note each collection MUST be intialized prior to running push2dme. \
+                                        Please note each collection MUST be intialized prior to running meta. \
                                         Example: --output /CCBR_EXT_Archive/PI_Lab/Project/Primary_Analysis')
-    # Dry-run (do not execute upload)
-    subparser_processed.add_argument('-n', '--dry-run',
-                                action = 'store_true',
-                                required = False,
-                                default = False,
-                                help = 'Optional: Do not execute anything, \
-                                and only display what steps would be run [Default: False].')
 
+    # Primary Analysis ID associated with a Multi-sample file
+    subparser_combined.add_argument('-a', '--analysis-id',
+                                type = str,
+                                required = False,
+                                help = 'Optional: Primary Analysis ID of the Pipeline which generated the input files. \
+                                        The Primary Analysis ID is a unique identifer for a given pipeline run. This unique \
+                                        identifer is calculated by find the MD5 of all the pipeline inputs.\
+                                        Example: --analysis-id 26071405f2f1c3a6f71d4141edb208e2')
 
     # Define run() as handler for sub-parser
-    subparser_raw.set_defaults(func = raw)
-    subparser_processed.set_defaults(func = process)
+    subparser_sample.set_defaults(func = sample)
+    subparser_combined.set_defaults(func = combined)
 
     # Parse command-line args
     args = parser.parse_args()
