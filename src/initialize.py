@@ -456,7 +456,7 @@ def _sample(parsed_data, template, opath, dme_vault, additional_metadata = {}):
                         temp['metadataEntries'].extend(metarun)
                     except KeyError:
                         pass # Edge-case: no runtime metadata for that sample
-                collection_name = 'rData_{}_{}'.format(sid, sname)
+                collection_name = 'Sample_{}_{}'.format(sid, sname)
 
                 outfile = os.path.join(opath, '{}.metadata.json'.format(collection_name))
                 path_exists(os.path.join(opath, '{}'.format(collection_name)))
