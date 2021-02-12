@@ -1,8 +1,8 @@
-# biowulf2DME
+# pyrkit
 
-![Build](https://github.com/skchronicles/biowulf2DME/workflows/ci/badge.svg)  [![GitHub issues](https://img.shields.io/github/issues/skchronicles/biowulf2DME)](https://github.com/skchronicles/biowulf2DME/issues) [![GitHub license](https://img.shields.io/github/license/skchronicles/biowulf2DME)](https://github.com/skchronicles/biowulf2DME/blob/master/LICENSE)  
+![Build](https://github.com/skchronicles/pyrkit/workflows/ci/badge.svg)  [![GitHub issues](https://img.shields.io/github/issues/skchronicles/pyrkit)](https://github.com/skchronicles/pyrkit/issues) [![GitHub license](https://img.shields.io/github/license/skchronicles/pyrkit)](https://github.com/skchronicles/pyrkit/blob/master/LICENSE)  
 
-`biowulf2DME` is tool to archive and co-locate NGS data with project-level, sample-level, and analysis-level metadata. It automates the process of moving data from the cluster to cloud storage in DME.
+`pyrkit` is tool to archive and co-locate NGS data with project-level, sample-level, and analysis-level metadata. It automates the process of moving data from the cluster to cloud storage in HPC DME.
 
 ### Overview
 ![DME Heirarchy](./assets/DME_Upload_Hierarchy.svg)
@@ -14,7 +14,7 @@ Along with capturing analysis-specific metadata for reproducibility, quality-con
 ### Installation
 ```bash
 # Clone the Repository
-git clone https://github.com/skchronicles/biowulf2DME.git
+git clone https://github.com/skchronicles/pyrkit.git
 # Create a virtual environment
 python3 -m venv .venv
 # Activate the virtual environment
