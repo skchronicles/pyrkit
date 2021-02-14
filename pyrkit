@@ -1,0 +1,110 @@
+# !/usr/bin/env bash
+# pyrkit: a tool to archive and co-locate NGS data with hierarchical metadata
+set -euo pipefail
+
+VERSION="0.1.0-beta"
+
+# Functions
+function err() { cat <<< "$@" 1>&2; }
+function fatal() { cat <<< "$@" 1>&2; exit 1; }
+function abspath() { readlink -e "$1"; }
+function parser() {
+# Parses command-line args using argparse.bash
+# @INPUT "$@" = user command-line arguments
+
+ARGPARSE_DESCRIPTION="A tool to archive and co-locate NGS data with structured metadata"
+ARGPARSE_EPILOG="Version $VERSION"
+argparse "$@" << EOF || exit 0
+# Required arguments group
+required = parser.add_argument_group('Required Arguments')
+optional = parser.add_argument_group('Optional Arguments')
+required.add_argument('-i', '--input-directory', required=True, type=str,
+                    help='Required local directory containing files (raw data and output files) \
+                    to upload into object storage (HPC DME). This path is the output directory \
+                    of a pipeline. Example: -i /data/CCBR/projects/ccbr123/RNA_hg38/')
+required.add_argument('-o', '--output-vault', required=True, type=str,
+                    help='Required vault in HPC DME to upload and archive local \
+                    input files and metadata. This vault represents the root HPC DME \
+                    path to archive the data located in --input-directory into object \
+                    storage. CCBR has two main vaults: /CCBR_EXT_Archive and /CCBR_Archive. \
+                    /CCBR_EXT_Archive is for storing any public data such as data or results \
+                    from dbGap, SRA, GEO or EBI. /CCBR_Archive is for storing any other data \
+                    such as data from internal (SF) and external sequencing providers \
+                    (NovoGene, GeneDx, Macrogen, Genentech). Example: -o /CCBR_Archive')
+# Optional arguments group
+optional.add_argument('-h', '--help', action='help', default=argparse.SUPPRESS,
+                    help='Display help message and exit')
+optional.add_argument('--version', action='version',
+                    version='%(prog)s $VERSION', help="Display version information and exit")
+EOF
+}
+
+
+function provided() {
+  # Checks to see if key,value pairs exist
+  # @INPUT $1 = name of user provided argument
+  # @INPUT $2 = value of user provided argument
+  # @CALLS fatal() if value is empty string or NULL
+
+  if [[ -z "${2:-}" ]]; then
+     fatal "Fatal: Failed to provide value to '${1}'!";
+  fi
+}
+
+
+function clean(){
+  # Finds the base name of the sample
+  # @INPUT $1 = From optional basename argument
+  # @RETURN $bname = cleaned base name (PATH and EXT removed)
+
+  local bname=${1:-}
+  local exts=("_1.fastq" "_2.fastq" ".R1.fastq" ".R2.fastq" "_R1.fastq" "_R2.fastq")
+
+  if [[ -z "$bname" ]]; then
+     bname="${Arguments[r1]}"  # Determine base name from R1 input
+  fi
+
+  # Remove PATH and .gz extension
+  bname=$(basename $bname | sed 's/.gz$//g')
+
+  # Clean remaining extensions (MateInfo + )
+  for ext in "${exts[@]}"; do
+    if [[ $bname == *${ext} ]]; then
+      bname=$(echo "$bname" | sed "s@$ext\$@@")
+      break # only remove one extension
+    fi
+  done
+
+  echo "$bname"
+}
+
+
+function main(){
+  # Parses cli args using argparse.bash and input files to extract metadata for upload
+  # Initializes upload directory representing DME heirarchy
+  # Generates collection and dataobject metadata based on inputs
+  # @INPUT "$@" = command-line arguments
+  # @CALLS parser(), initialize()
+
+  # Check for version flag
+  case $1 in
+    --version) echo "$(basename $0) $VERSION" && exit 0;;
+  esac
+
+  # pyrkit home directory or installation location
+  repohome=$(abspath $(dirname  "$0"))
+
+  # Enable argparse parsing within bash
+  source $(dirname $0)/src/argparse.bash || \
+    fatal "Fatal: Failed to locate argparse.bash in ${repohome}!"
+
+  # Parse command-line arguments with argparse
+  parser "${@}"
+
+  echo required infile: "$INPUT_DIRECTORY"
+  echo required outfile: "$OUTPUT_VAULT"
+
+}
+
+# Main: check usage, parse args, extract metadata from inputs and generate upload heirarchy
+main "$@"
