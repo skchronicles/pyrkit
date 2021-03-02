@@ -8,6 +8,7 @@ VERSION="0.1.0-beta"
 # Functions
 function err() { cat <<< "$@" 1>&2; }
 function fatal() { cat <<< "$@" 1>&2; exit 1; }
+function log() { echo -e "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@"; }
 function abspath() { readlink -e "$1"; }
 function parser() {
 # Parses command-line args using argparse.bash
@@ -96,6 +97,89 @@ function clean(){
 }
 
 
+function require(){
+  # Requires an executable is in $PATH, as a last resort it will attempt to load
+  # the executable or dependency as a module
+  # @INPUT $@ = List of dependencies or executables to check
+
+  for exe in "${@}"; do
+    # Check if executable is in $PATH
+    command -V ${exe} &> /dev/null && continue;
+    # Try to load exe as lua module
+    module load ${exe} &> /dev/null || \
+      fatal "Failed to find or load '${exe}', not installed on target system."
+  done
+}
+
+
+function init(){
+  # Intializes a list of directories
+  # @INPUT $@ = List of directories
+
+  for d in "${@}"; do
+    mkdir -p ${d} || fatal "Failed to initialize '${d}' directory";
+  done
+}
+
+
+function lint(){
+  # Lints user-provided project request template (experiment_metadata.xlsx)
+  # Check for basic errors and if user provided all the require metadata
+  # See --request-template or $REQUEST_TEMPLATE in help for more information
+  # @INPUT $1 = PATH to pyrkit/src/lint.py program
+  # @INPUT $2 = Project Request Template files to parse and lint
+  # @INPUT $3 = Output Directory
+  python ${1} ${2} ${3}
+}
+
+
+function _get_inner_distances(){
+  # Parses Inner Distance Maxmia from RSeQC output files
+  # @INPUT $1 = Input Directory or pipeline working directory (i.e. $INPUT_DIRECTORY)
+  # @INPUT $2 = MultiQC Output Directory
+  # @INPUT $3 = Parsed Inner Distance Output file
+
+  # Performant approach to checking if glob exists using a Bash built-in function
+  if compgen -G "${1}/STAR_files/*.Aligned.sortedByCoord.out.inner_distance_freq.txt" > /dev/null; then
+    echo -e "Sample\tInner_Dist_Maxima" > ${2}/${3} || fatal "Failed to write to MultiQC Directory ${2}"
+    # Get Inner Distance Maxima from RSeQC Output files
+    for f in ${1}/STAR_files/*.Aligned.sortedByCoord.out.inner_distance_freq.txt; do
+      sample=$(basename $f | sed 's/^output.//' | sed 's/.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt$//');
+      inner_dist_maxima=$(sort -k3,3nr "$f" | awk -F '\t' 'NR==1{print $1}');
+      echo -e "${sample}\t${inner_dist_maxima}";
+    done >> ${2}/${3}
+  fi
+}
+
+
+function _get_median_tin(){
+  # Parses RSeQC Median TIN (transcript integrity number) from output files
+  # @INPUT $1 = Input Directory or pipeline working directory (i.e. $INPUT_DIRECTORY)
+  # @INPUT $2 = MultiQC Output Directory
+  # @INPUT $3 = Parsed medTIN Output file
+
+  # Performant approach to checking if glob exists using a Bash built-in function
+  if compgen -G "${1}/STAR_files/*.summary.txt" > /dev/null; then
+    echo -e "Sample\tmedian_tin" > ${2}/${3} || fatal "Failed to write to MultiQC Directory ${2}"
+    # Parse medTIN from RSeQC tin.py output files
+    cut -f1,3 "${1}"/STAR_files/*.summary.txt | \
+      grep -v '^Bam_file' | \
+      sed 's/.p2.Aligned.sortedByCoord.out.dmark.bam//g' | \
+      awk -F '\t' '{printf "%s\t%.3f\n", $1,$2}' >> ${2}/${3}
+  fi
+}
+
+
+function parse(){
+  # Parse additional output files that MultiQC does not automatically parse
+  # @INPUT $1 = Input Directory or pipeline working directory (i.e. $INPUT_DIRECTORY)
+  # @INPUT $2 = MultiQC Directory (i.e. $MULTIQC_DIRECTORY)
+
+  # Parse Addtional QC metadata from logfiles
+  _get_inner_distances "${1}" "${2}" "mqc_rseqc_inner_distance_plot_Percentages_parsed.txt"
+  _get_median_tin "${1}" "${2}" "rseqc_median_tin.txt"
+}
+
 function main(){
   # Parses cli args using argparse.bash and input files to extract metadata for upload
   # Initializes upload directory representing DME heirarchy
@@ -104,7 +188,7 @@ function main(){
   # @CALLS parser(), initialize()
 
   # Check for version flag
-  case $1 in
+  case ${1:-} in
     --version) echo "$(basename $0) $VERSION" && exit 0;;
   esac
 
@@ -116,13 +200,23 @@ function main(){
     fatal "Fatal: Failed to locate argparse.bash in ${repohome}!"
 
   # Parse command-line arguments with argparse
+  if [ $# -eq 0 ]; then parser -h; fi  # Display usage, user did not provide any args
   parser "${@}"
 
-  echo "Input Directory: $INPUT_DIRECTORY"
-  echo "Output DME Vault: $OUTPUT_VAULT"
-  echo "Request Template: $REQUEST_TEMPLATE"
-  echo "MultiQC HOME: $MULTIQC_DIRECTORY"
-  echo "Project ID: $PROJECT_ID"
+  # Exported Argparse variables
+  #echo "Input Directory: $INPUT_DIRECTORY"
+  #echo "Output DME Vault: $OUTPUT_VAULT"
+  #echo "Request Template: $REQUEST_TEMPLATE"
+  #echo "MultiQC HOME: $MULTIQC_DIRECTORY"
+  #echo "Project ID: $PROJECT_ID"
+
+  # Base directory for all intermediate output files
+  output="${INPUT_DIRECTORY%/}/DME"
+
+  init output
+  require git jq python/3.5
+  lint "${repohome}/src/lint.py" "${REQUEST_TEMPLATE}" "${output}"
+  parse "${INPUT_DIRECTORY%/}" "${MULTIQC_DIRECTORY%/}"
 
 }
 
