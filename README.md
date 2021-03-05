@@ -1,6 +1,6 @@
 # pyrkit
 
-![Build](https://github.com/skchronicles/pyrkit/workflows/ci/badge.svg)  [![GitHub issues](https://img.shields.io/github/issues/skchronicles/pyrkit)](https://github.com/skchronicles/pyrkit/issues) [![GitHub license](https://img.shields.io/github/license/skchronicles/pyrkit)](https://github.com/skchronicles/pyrkit/blob/master/LICENSE)  
+[![Build](https://github.com/skchronicles/pyrkit/workflows/ci/badge.svg)](https://github.com/skchronicles/pyrkit/actions)  [![GitHub issues](https://img.shields.io/github/issues/skchronicles/pyrkit)](https://github.com/skchronicles/pyrkit/issues) [![GitHub license](https://img.shields.io/github/license/skchronicles/pyrkit)](https://github.com/skchronicles/pyrkit/blob/master/LICENSE)  
 
 `pyrkit` is tool to archive and co-locate NGS data with project-level, sample-level, and analysis-level metadata. It automates the process of moving data from the cluster to cloud storage in HPC DME.
 
