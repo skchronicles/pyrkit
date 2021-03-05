@@ -45,11 +45,23 @@ required.add_argument('-m', '--multiqc-directory', required=True, type=str,
                     as it builds the report. These files are parsed to \
                     attach quality-control metadata to each Sample-level collection. \
                     Example: -m /data/projects/ccbr123/RNA/multiqc_data/')
+required.add_argument('-d', '--dme-repo', required=True, type=str,
+                    help='Required Path to a HPC DME command line toolkit installation. This path \
+                    represents a local path to a git installation of DME command line interface. \
+                    The DME command line toolkit must be installed to archive data into a \
+                    vault. If you do not have toolkit installed, please visit this Getting \
+                    Started page: wiki.nci.nih.gov/display/DMEdoc/Getting+Started \
+                    Example: -d ~/DME/HPC_DME_APIs/')
 # Optional arguments group
 optional.add_argument('-p', '--project-id', type=str,
                     help='Optional Project ID. This is a unique identifer or alias tied to \
                     a request to internally distinguish a project. This could be a CCBR/NCBR/NAS project \
                     ID. Example: -p ccbr-123')
+optional.add_argument('-n', '--dry-run', action = 'store_true', default = 'no',
+                    help='Dry-run the entire pyrkit workflow. If this option is provided \
+                    all the normal steps of the pyrkit workflow will be executed but data \
+                    will NOT be pushed into HPC DME. This is useful for debugging purposes or \
+                    if you are not ready to push everything into HPC DME. Example: --dry-run')
 optional.add_argument('-h', '--help', action='help', default=argparse.SUPPRESS,
                     help='Display help message and exit')
 optional.add_argument('--version', action='version',
@@ -439,6 +451,23 @@ function multi(){
 }
 
 
+dryrun(){
+  # Dry-runs dm_register_directory command for pushing local data to HPC DME
+  # @INPUT $1 = DME base directory for all intermediate output files (i.e. ${INPUT_DIRECTORY})
+  # @INPUT $2 = Path to local git installation of DME CLU toolkit
+  # @INPUT $3 = DME Vault to push data (i.e. /CCBR_Archive or /CCBR_EXT_Archive)
+
+  ( # Goto DME base directory for all intermediate output files
+    cd "${1}"
+
+    # Source HPC DME API entry point
+    dm_register_directory -d -s -t 2 -e <(echo '**.metadata.json') upload "${3}"
+
+    echo "Exit status of dryrun: $?"
+  )
+}
+
+
 function main(){
   # Parses cli args using argparse.bash and input files to extract metadata for upload
   # Initializes upload directory representing DME heirarchy
@@ -450,13 +479,12 @@ function main(){
   #   $OUTPUT_VAULT    = Output DME Vault
   #   $REQUEST_TEMPLATE  = Request Template
   #   $MULTIQC_DIRECTORY = MultiQC HOME
-  #   $PROJECT_ID"  =  Project ID
+  #   $PROJECT_ID  =  Project ID
+  #   $DRY_RUN     =  Dry run workflow
+  #   $DME_REPO    =  Path to DME git install
 
   # Check system dependencies are installed
   require git jq python/3.5
-
-  # Set Defaults for Optional arguments
-  PROJECT_ID="${PROJECT_ID:-}"
 
   # Check for version flag
   case ${1:-} in
@@ -476,6 +504,13 @@ function main(){
 
   # Base directory for all intermediate output files
   output="${INPUT_DIRECTORY%/}/DME"
+  # Set Defaults for Optional arguments
+  PROJECT_ID="${PROJECT_ID:-}"
+
+  # Check that user has DME CLU toolkit installed
+  export HPC_DM_UTILS="${DME_REPO%/}/utils"
+  source "$HPC_DM_UTILS/functions"
+  require "dm_register_directory"
 
   # Initialize output diretory, lint template, parse logs, and aggregate QC information
   init "${output}"
@@ -500,6 +535,16 @@ function main(){
   # Prepares multi-sample results or files for upload into Primary Analysis collection
   multi "${INPUT_DIRECTORY%/}" "${output}/${analysis_home}" "${MULTIQC_DIRECTORY%/}" "${REQUEST_TEMPLATE}" \
         "${repohome}/src/meta" "$dme_analysis_home" "${inputs_md5}"
+
+  # Dry-run dm_register_directory command
+  dryrun "${output}" "${DME_REPO%/}" "/${OUTPUT_VAULT#/}"
+
+  # Push to HPC DME if --dry-run option NOT provided
+  if [ "$DRY_RUN" = "no" ]; then
+    sbatch -J "pyrkit" --mem=64g --cpus-per-task=32 --time=24:00:00 \
+      "${repohome}/src/submit.sh" "${output}" "${DME_REPO%/}" "/${OUTPUT_VAULT#/}"
+  fi
+
 }
 
 

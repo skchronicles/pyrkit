@@ -289,9 +289,9 @@ def tsv2dict(file, key_index = 0, value_index = 1, header = False):
     samples = sorted([re.split('\.R[12]\.fastq\.gz', os.path.basename(s))[0] for s in set(samples)])
     samples = ",".join(samples)
 
-    # Orcale VARCHAR limit is 4000
-    # Add input_samples_list dme attribute if less than 4000 characters
-    if len(samples) < 4000:
+    # iRODS VARCHAR limit is 2700
+    # Add input_samples_list dme attribute if less than 2700 characters
+    if len(samples) < 2700:
         metadata['input_samples_list'] = samples
 
     return metadata
