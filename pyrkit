@@ -541,8 +541,9 @@ function main(){
 
   # Push to HPC DME if --dry-run option NOT provided
   if [ "$DRY_RUN" = "no" ]; then
-    sbatch -J "pyrkit" --mem=64g --cpus-per-task=32 --time=24:00:00 \
-      "${repohome}/src/submit.sh" "${output}" "${DME_REPO%/}" "/${OUTPUT_VAULT#/}"
+    jobid=$(sbatch -J "pyrkit" --mem=64g --cpus-per-task=32 --time=24:00:00 \
+      "${repohome}/src/submit.sh" "${output}" "${DME_REPO%/}" "/${OUTPUT_VAULT#/}")
+    echo "Submiting Job ${jobid} to push data into DME"
   fi
 
 }
