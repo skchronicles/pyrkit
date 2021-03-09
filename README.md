@@ -12,8 +12,8 @@ a tool to archive and co-locate NGS data with project-level, sample-level, and a
 3. [Run pyrkit](#3-Run-pyrkit)   
     3.1 [Usage](#31-Usage)  
     3.2 [Required Arguments](#32-Required-Arguments)  
-    3.3 [OPTIONS](#33-OPTIONS)
-
+    3.3 [OPTIONS](#33-OPTIONS)   
+    3.4 [Example](#34-Example)
 
 ### 1. Overview
 
@@ -31,7 +31,7 @@ pykrit has a few required dependencies. It requires the installation of the foll
   - [`python3`](https://www.python.org/downloads/) 
   - [`HPC DME toolkit`](https://wiki.nci.nih.gov/display/DMEdoc/Getting+Started)
 
-Please note that if you running pyrkit on Biowulf, the only dependency you will need to install in the [`HPC DME toolkit`](https://wiki.nci.nih.gov/display/DMEdoc/Getting+Started). pyrkit will attempt to module load jq and python/3.5 (which meets any python requirements), if they are not in your $PATH. pyrkit needs the 
+Please note that if you running pyrkit on Biowulf, the only dependency you will need to install in the [`HPC DME toolkit`](https://wiki.nci.nih.gov/display/DMEdoc/Getting+Started). pyrkit will attempt to module load jq and python/3.5 (which meets any python requirements), if they are not in your $PATH.
 
 #### 2.2 Installation
 
@@ -80,3 +80,18 @@ usage: pyrkit -i INPUT_DIRECTORY -o OUTPUT_VAULT -r REQUEST_TEMPLATE
 | -n, --dry-run            | Flag    | Dry-run the entire pyrkit workflow    | `-n`                |
 | -h, --help               | Flag    | Display help message and exit         | `-h`                |
 | --version                | Flag    | Display version information and exit  | `--version`         |
+
+##### 3.4 Example 
+```bash 
+# Grab an interactive node or submit pyrkit command to cluster
+# Do not run this on the head node!
+sinteractive --mem=8g --cpus-per-task=2
+
+# Dry runs pyrkit and submits job to upload data to cluster
+./pyrkit -i /scratch/ccbr123/RNA_hg38/ \
+         -o /CCBR_Archive \
+         -r experiment_metadata.xlsx \
+         -m /scratch/ccbr123/RNA_hg38/multiqc_data/ \
+         -d ~/DME/HPC_DME_APIs/ \
+         -p ccbr-123
+```
