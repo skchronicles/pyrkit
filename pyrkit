@@ -8,7 +8,7 @@ VERSION="0.1.0-beta"
 # Functions
 function err() { cat <<< "$@" 1>&2; }
 function fatal() { cat <<< "$@" 1>&2; exit 1; }
-function log() { echo -e "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@"; }
+function log() { echo -e "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $*"; }
 function abspath() { readlink -e "$1"; }
 function parser() {
 # Parses command-line args using argparse.bash
@@ -90,12 +90,8 @@ function clean(){
   local bname=${1:-}
   local exts=("_1.fastq" "_2.fastq" ".R1.fastq" ".R2.fastq" "_R1.fastq" "_R2.fastq")
 
-  if [[ -z "$bname" ]]; then
-     bname="${Arguments[r1]}"  # Determine base name from R1 input
-  fi
-
   # Remove PATH and .gz extension
-  bname=$(basename $bname | sed 's/.gz$//g')
+  bname=$(basename "$bname" | sed 's/.gz$//g')
 
   # Clean remaining extensions (MateInfo + )
   for ext in "${exts[@]}"; do
@@ -141,7 +137,7 @@ function lint(){
   # @INPUT $1 = PATH to pyrkit/src/lint.py program
   # @INPUT $2 = Project Request Template files to parse and lint (i.e. $REQUEST_TEMPLATE)
   # @INPUT $3 = Output Directory
-  python ${1} ${2} ${3}
+  python "${1}" "${2}" "${3}"
 }
 
 
@@ -153,13 +149,13 @@ function _get_inner_distances(){
 
   # Performant approach to checking if glob exists using a Bash built-in function
   if compgen -G "${1}/STAR_files/*.Aligned.sortedByCoord.out.inner_distance_freq.txt" > /dev/null; then
-    echo -e "Sample\tInner_Dist_Maxima" > ${2}/${3} || fatal "Failed to write to MultiQC Directory ${2}"
+    echo -e "Sample\tInner_Dist_Maxima" > "${2}/${3}" || fatal "Failed to write to MultiQC Directory ${2}"
     # Get Inner Distance Maxima from RSeQC Output files
-    for f in ${1}/STAR_files/*.Aligned.sortedByCoord.out.inner_distance_freq.txt; do
-      sample=$(basename $f | sed 's/^output.//' | sed 's/.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt$//');
+    for f in "${1}"/STAR_files/*.Aligned.sortedByCoord.out.inner_distance_freq.txt; do
+      sample=$(basename "$f" | sed 's/^output.//' | sed 's/.p2.Aligned.sortedByCoord.out.inner_distance_freq.txt$//');
       inner_dist_maxima=$(sort -k3,3nr "$f" | awk -F '\t' 'NR==1{print $1}');
       echo -e "${sample}\t${inner_dist_maxima}";
-    done >> ${2}/${3}
+    done >> "${2}/${3}"
   fi
 }
 
@@ -172,12 +168,12 @@ function _get_median_tin(){
 
   # Performant approach to checking if glob exists using a Bash built-in function
   if compgen -G "${1}/STAR_files/*.summary.txt" > /dev/null; then
-    echo -e "Sample\tmedian_tin" > ${2}/${3} || fatal "Failed to write to MultiQC Directory ${2}"
+    echo -e "Sample\tmedian_tin" > "${2}/${3}" || fatal "Failed to write to MultiQC Directory ${2}"
     # Parse medTIN from RSeQC tin.py output files
     cut -f1,3 "${1}"/STAR_files/*.summary.txt | \
       grep -v '^Bam_file' | \
       sed 's/.p2.Aligned.sortedByCoord.out.dmark.bam//g' | \
-      awk -F '\t' '{printf "%s\t%.3f\n", $1,$2}' >> ${2}/${3}
+      awk -F '\t' '{printf "%s\t%.3f\n", $1,$2}' >> "${2}/${3}"
   fi
 }
 
@@ -190,10 +186,10 @@ function _get_flowcell_lanes(){
 
   # Performant approach to checking if glob exists using a Bash built-in function
   if compgen -G "${1}/rpt.on.fastqs.txt" > /dev/null; then
-    echo -e "Sample\tflowcell_lanes" > ${2}/${3} || fatal "Failed to write to MultiQC Directory ${2}"
+    echo -e "Sample\tflowcell_lanes" > "${2}/${3}" || fatal "Failed to write to MultiQC Directory ${2}"
     # Parse Flowcell Lane Information
     sed 's/\.R1\.fastq\.gz//g' "${1}/rpt.on.fastqs.txt" | \
-      awk -v OFS='\t' '{print $1,$NF}' >> ${2}/${3}
+      awk -v OFS='\t' '{print $1,$NF}' >> "${2}/${3}"
   fi
 }
 
@@ -206,10 +202,10 @@ function _get_sample_groups(){
 
   # Performant approach to checking if glob exists using a Bash built-in function
   if compgen -G "${1}/sample.json" > /dev/null; then
-    echo -e "Sample\tTissueType"  > ${2}/${3} || fatal "Failed to write to MultiQC Directory ${2}"
+    echo -e "Sample\tTissueType"  > "${2}/${3}" || fatal "Failed to write to MultiQC Directory ${2}"
     # Parse Group informaion from sample.json with jq
     jq -r 'to_entries[] | [.value."Sample Name", .value.Group] | @tsv' "${1}/sample.json" \
-      | sed 's/\tnan$/\tUnknown/g' >> ${2}/${3}
+      | sed 's/\tnan$/\tUnknown/g' >> "${2}/${3}"
   fi
 
 }
@@ -249,22 +245,22 @@ function fingerprint(){
   sed 's/^file /file\t/g' "${1}/runinfo.txt" > "${2}/run_metadata.txt"
 
   # Convert Input Files to MD5 checksums
-  while read field value; do
+  while read -r field value; do
     # Get MD5 checksum if evaluating an input file
     ifile=$(if [[ -f "$value" ]]; then md5sum "$value" | awk '{print $1}'; else echo "$value"; fi)
     echo -e "$field\t$ifile"
   done < <(grep -v '^jobname\|^gtf_ver\|^assembly_name\|^species' "${2}/run_metadata.txt" | sort -k2,2) \
-  > ${2}/run_inputs.md5
+  > "${2}/run_inputs.md5"
 
   # Add MD5 checksum of all inputs and create an analysis id to run metadata
-  inputs_md5=$(md5sum ${2}/run_inputs.md5 | awk '{print $1}')
+  inputs_md5=$(md5sum "${2}/run_inputs.md5" | awk '{print $1}')
   analysis_id="${inputs_md5:0:3}-${inputs_md5:${#inputs_md5}/2:2}-${inputs_md5:${#inputs_md5}-4}"
   echo -e "md5_all_inputs\t${inputs_md5}" >> "${2}/run_metadata.txt"
   echo -e "md5_all_inputs_serial\t${analysis_id}" >> "${2}/run_metadata.txt"
 
   # Get assembly_name and gtf_ver from run inputs
-  assembly_name=$((grep '^assembly_name' ${2}/run_metadata.txt || echo "custom") | awk -F '\t' '{print $NF}')
-  gtf_ver=$((grep '^gtf_ver' ${2}/run_metadata.txt || echo "custom") | awk -F '\t' '{print $NF}')
+  assembly_name=$( (grep '^assembly_name' "${2}/run_metadata.txt" || echo "custom") | awk -F '\t' '{print $NF}')
+  gtf_ver=$( (grep '^gtf_ver' "${2}/run_metadata.txt" || echo "custom") | awk -F '\t' '{print $NF}')
 
   # Return inputs_md5, analysis_id, assembly_name, gtf_ver
   echo -e "${inputs_md5}\t${analysis_id}\t${assembly_name}\t${gtf_ver}"
@@ -306,16 +302,16 @@ function _sym_link_fastqs(){
   # Symlinks a Samples FastQ files into their mock upload sample collection and
   # generates data-object metadata for DME upload
   # @INPUT $1 = Input Directory or pipeline working directory (i.e. $INPUT_DIRECTORY)
-  # @INPUT $2 = DME base directory for all intermediate output files
+  # @INPUT $2 = DME base directory for all intermediate output files (i.e. "$INPUT_DIRECTORY/DME")
   # @INPUT $3 = DME Vault to push data (i.e. /CCBR_Archive or /CCBR_EXT_Archive)
   # @INPUT $4 = PATH to pyrkit/src/meta program
 
   for f in "${1}"/*.R?.fastq.gz; do
     # Find a FastQ files mock Sample Collection
     sample=$(basename "$f"| sed 's/\.R.\.fastq\.gz//')
-    rawdir=$(ls --color=never -d "${2}"/upload/PI_Lab_*/Project_*/Sample_*_${sample})
+    rawdir=$(ls --color=never -d "${2}"/upload/PI_Lab_*/Project_*/Sample_*_"${sample}")
     ln -s "$f" "$rawdir" || echo "Failed to create symlink for $f and $rawdir";
-    fname=$(basename "$f"); dmepath=$(dirname "$rawdir" | sed "s@^${2}/upload@${3%/}@")
+    fname=$(basename "$f"); dmepath=$(echo "$rawdir" | sed "s@^${2}/upload@${3%/}@")
 
     # Generate dataobject metadata for FastQ files
     python "${4}" sample -i "$rawdir/$fname" -o "$dmepath" -s "$sample"
@@ -327,7 +323,7 @@ function _sym_link_gbam(){
   # Symlinks a Samples Genomic BAM files into their mock upload sample collection and
   # generates data-object metadata for DME upload
   # @INPUT $1 = Input Directory or pipeline working directory (i.e. $INPUT_DIRECTORY)
-  # @INPUT $2 = DME base directory for all intermediate output files
+  # @INPUT $2 = DME base directory for all intermediate output files (i.e. "$INPUT_DIRECTORY/DME")
   # @INPUT $3 = DME Vault to push data (i.e. /CCBR_Archive or /CCBR_EXT_Archive)
   # @INPUT $4 = PATH to pyrkit/src/meta program
   # @INPUT $5 = Assembly Name (i.e. mm10)
@@ -339,11 +335,11 @@ function _sym_link_gbam(){
   for f in "${1}"/STAR_files/*.p2.Aligned.sortedByCoord.out.dmark.bam; do
     # Find a FastQ files mock Sample Collection
     sample=$(basename "$f" | sed 's/\.p2\.Aligned\.sortedByCoord\.out\.dmark\.bam$//')
-    rawdir=$(ls --color=never -d "${2}"/upload/PI_Lab_*/Project_*/Sample_*_${sample})
+    rawdir=$(ls --color=never -d "${2}"/upload/PI_Lab_*/Project_*/Sample_*_"${sample}")
     # Create renamed symlinks with assembly, gtf ver and analysis_id
     ln -s "$f" "${rawdir}/${sample}.${5}_${6}.Aligned.toGenome.sorted.dmark.${7}.bam" \
       || echo "Failed to create symlink for $f and $rawdir";
-    dmepath=$(dirname "$rawdir" | sed "s@^${2}/upload@${3%/}@")
+    dmepath=$(echo "$rawdir" | sed "s@^${2}/upload@${3%/}@")
     # Generate dataobject metadata for FastQ files
     python "${4}" sample -i "$rawdir/${sample}.${5}_${6}.Aligned.toGenome.sorted.dmark.${7}.bam" \
       -o "$dmepath" -s "$sample" -a "${8}" -d "${9}"
@@ -355,7 +351,7 @@ function _sym_link_tbam(){
   # Symlinks a Samples Transcriptomic BAM files into their mock upload sample collection and
   # generates data-object metadata for DME upload
   # @INPUT $1 = Input Directory or pipeline working directory (i.e. $INPUT_DIRECTORY)
-  # @INPUT $2 = DME base directory for all intermediate output files
+  # @INPUT $2 = DME base directory for all intermediate output files (i.e. "$INPUT_DIRECTORY/DME")
   # @INPUT $3 = DME Vault to push data (i.e. /CCBR_Archive or /CCBR_EXT_Archive)
   # @INPUT $4 = PATH to pyrkit/src/meta program
   # @INPUT $5 = Assembly Name (i.e. mm10)
@@ -367,11 +363,11 @@ function _sym_link_tbam(){
   for f in "${1}"/bams/*.p2.Aligned.toTranscriptome.out.bam; do
     # Find a FastQ files mock Sample Collection
     sample=$(basename "$f" | sed 's/\.p2\.Aligned\.toTranscriptome\.out\.bam$//')
-    rawdir=$(ls --color=never -d "${2}"/upload/PI_Lab_*/Project_*/Sample_*_${sample})
+    rawdir=$(ls --color=never -d "${2}"/upload/PI_Lab_*/Project_*/Sample_*_"${sample}")
     # Create renamed symlinks with assembly, gtf ver and analysis_id
     ln -s "$f" "${rawdir}/${sample}.${5}_${6}.Aligned.toTranscriptome.${7}.bam" \
       || echo "Failed to create symlink for $f and $rawdir";
-    dmepath=$(dirname "$rawdir" | sed "s@^${2}/upload@${3%/}@")
+    dmepath=$(echo "$rawdir" | sed "s@^${2}/upload@${3%/}@")
     # Generate dataobject metadata for FastQ files
     python "${4}" sample -i "$rawdir/${sample}.${5}_${6}.Aligned.toTranscriptome.${7}.bam" \
       -o "$dmepath" -s "$sample" -a "${8}" -d "${9}"
@@ -382,7 +378,7 @@ function _sym_link_tbam(){
 function links(){
   # Creates symlinks for files to upload into DME
   # @INPUT $1 = Input Directory or pipeline working directory (i.e. $INPUT_DIRECTORY)
-  # @INPUT $2 = DME base directory for all intermediate output files
+  # @INPUT $2 = DME base directory for all intermediate output files (i.e. "$INPUT_DIRECTORY/DME")
   # @INPUT $3 = DME Vault to push data (i.e. /CCBR_Archive or /CCBR_EXT_Archive)
   # @INPUT $4 = PATH to pyrkit/src/meta program
   # @INPUT $5 = Assembly Name (i.e. mm10)
@@ -439,15 +435,15 @@ function multi(){
   fix "${2}/RSEM_genes_expected_counts.tsv" "${2}/RSEM_isoforms_expected_counts.tsv"
 
   # Symlink remaining files to Primary Analysis collection
-  mqc_prefix=$(basename ${1})
+  mqc_prefix=$(basename "${1}")
   for f in "${3}"/multiqc_matrix.tsv "${1}/${mqc_prefix}_multiqc_report.html" "${4}"; do
     ln -s "${f}" "${2}/" || echo "Failed to create symlink for $f and ${2}";
   done
 
   # Generate dataobject metadata files for aggregate or multi-sample data
-  for f in $(find "${2}" -not -type d -not -iname '*.metadata.json'); do
+  while read -r f; do
     python "${5}" combined -i "$f" -o "${6}" -a "${7}"
-  done
+  done < <(find "${2}" -not -type d -not -iname '*.metadata.json')
 }
 
 
@@ -488,14 +484,14 @@ function main(){
 
   # Check for version flag
   case ${1:-} in
-    --version) echo "$(basename $0) $VERSION" && exit 0;;
+    --version) echo "$(basename "$0") $VERSION" && exit 0;;
   esac
 
   # pyrkit home directory or installation location
-  repohome=$(abspath $(dirname  "$0"))
+  repohome=$(abspath "$(dirname  "$0")")
 
   # Enable argparse parsing within bash
-  source $(dirname $0)/src/argparse.bash || \
+  source "$(dirname "$0")/src/argparse.bash" || \
     fatal "Fatal: Failed to locate argparse.bash in ${repohome}!"
 
   # Parse command-line arguments with argparse
@@ -509,7 +505,7 @@ function main(){
 
   # Check that user has DME CLU toolkit installed
   export HPC_DM_UTILS="${DME_REPO%/}/utils"
-  source "$HPC_DM_UTILS/functions"
+  source "${HPC_DM_UTILS}/functions"
   require "dm_register_directory"
 
   # Initialize output diretory, lint template, parse logs, and aggregate QC information
@@ -521,7 +517,7 @@ function main(){
   # Generate unique and determinstic Analysis ID based on User Inputs
   local inputs_md5 analysis_id
   local assembly_name gtf_ver
-  IFS=$'\t' read inputs_md5 analysis_id assembly_name gtf_ver < <(fingerprint "${INPUT_DIRECTORY%/}" "${output}")
+  IFS=$'\t' read -r inputs_md5 analysis_id assembly_name gtf_ver < <(fingerprint "${INPUT_DIRECTORY%/}" "${output}")
 
   # Initializes local filesystem mock DME hierarchy
   # PI-, Project-, Analysis-, Sample-level directories are created along with metadata
