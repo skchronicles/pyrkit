@@ -66,10 +66,10 @@ usage: pyrkit -i INPUT_DIRECTORY -o OUTPUT_VAULT -r REQUEST_TEMPLATE
 
 | Argument                 | Type    | Description                       | Example                                |  
 | ------------------------ | ------- | --------------------------------- | -------------------------------------- |  
-| -i, --input-directory    | Path    | Pipeline output directory         | `/data/project/RNA_hg38/`              |  
+| -i, --input-directory    | Path    | Pipeline output directory         | `/scratch/RNA_hg38/`                   |  
 | -o, --output-vault       | String  | HPC DME vault to upload data      | `/CCBR_Archive`                        |  
 | -r, --request-template   | File    | Project Request Template          | `experiment_metadata.xlsx`             |  
-| -m, --multiqc-directory  | Path    | MultiQC Output Directory          | `/data/project/RNA_hg38/multiqc_data/` |        
+| -m, --multiqc-directory  | Path    | MultiQC Output Directory          | `/scratch/RNA_hg38/multiqc_data/`      |        
 | -d, --dme-repo           | Path    | Path to a HPC DME toolkit install | `~/DME/HPC_DME_APIs/`                  |  
 
 #### 3.3 OPTIONS
