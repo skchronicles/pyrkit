@@ -1,7 +1,7 @@
 #!/bin/env bash
 set -eu
 
-# USAGE: sbatch -J "ccbrXYZ" --mem=64g --cpus-per-task=32 --time=24:00:00 submit.sh "/path/to/ccbrYXZ/RNA_OUT/DME/" "/path/to/dme/repo/HPC_DME_APIs/" "/CCBR_Archive"
+# USAGE: sbatch -J "ccbrXYZ" --mem=24g --cpus-per-task=4 --time=24:00:00 submit.sh "/path/to/ccbrYXZ/RNA_OUT/DME/" "/path/to/dme/repo/HPC_DME_APIs/" "/CCBR_Archive"
 
 # Launches a job to push local data into HPC DME
 # @INPUT $1 = DME base directory for all intermediate output files (i.e. ${INPUT_DIRECTORY)/DME)
