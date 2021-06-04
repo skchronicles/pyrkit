@@ -15,7 +15,7 @@ config = {
     "project_template": {
         "input": "project.json",
         "singularity_required": ["project_title", "project_description",
-                                  "start_date", "project_poc","poc_email"],
+                                  "project_start_date", "contact_name","poc_email"],
     },
     "sample_template": {
         "input": "sample.json",
@@ -409,7 +409,7 @@ def _project(parsed_data, template, opath, dme_vault, pid):
                     temp['metadataEntries'].append({'attribute': field, 'value': val})
             else:
                 # Get dme field names for collection and write output to file
-                poc, origin, nsamples, method, sdate = dict2list(parsed_data, ["project_poc", "origin", "number_of_cases", "method", "start_date"], i=i, override_index=["project_poc", "start_date"])
+                poc, origin, nsamples, method, sdate = dict2list(parsed_data, ["contact_name", "origin", "number_of_cases", "method", "project_start_date"], i=i, override_index=["contact_name", "project_start_date"])
                 poc = poc.replace(" ","")
                 origin = origin.replace(" ","-")
                 method = method.replace(" ","-")
