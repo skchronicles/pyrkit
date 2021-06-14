@@ -4,6 +4,8 @@
 from __future__ import print_function, division
 import sys, os, json, re
 
+__author__ = 'Skyler Kuhn'
+
 # Configuration for defining valid sheets and other default values
 config = {
     ".warning": ["\033[93m", "\033[00m"], ".error": ["\033[91m", "\033[00m"],
@@ -365,8 +367,10 @@ def _pi(parsed_data, template, opath, dme_vault, index=0):
         for field, userdata in metadict.items():
             template['metadataEntries'].append({'attribute': field, 'value': userdata[0]})
 
+    template['metadataEntries'].append({'attribute': 'data_curator', 'value': __author__})
+
     # Get name and aff for output
-    name, aff = dict2list(parsed_data, ["pi_name", "affiliation"], i=index)
+    name, aff = dict2list(parsed_data, ["data_owner", "affiliation"], i=index)
     last, first = [n.lstrip().rstrip() for n in name.split(',')]
     aff = aff.split()[-1].replace('(','').replace(')','')
     collection_name = 'PI_Lab_{}{}_{}'.format(first, last, aff)
