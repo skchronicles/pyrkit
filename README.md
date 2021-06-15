@@ -1,6 +1,6 @@
 # pyrkit
 
-[![Build](https://github.com/skchronicles/pyrkit/workflows/ci/badge.svg)](https://github.com/skchronicles/pyrkit/actions)  [![GitHub issues](https://img.shields.io/github/issues/skchronicles/pyrkit)](https://github.com/skchronicles/pyrkit/issues) [![GitHub license](https://img.shields.io/github/license/skchronicles/pyrkit)](https://github.com/skchronicles/pyrkit/blob/master/LICENSE)  
+[![GitHub releases](https://img.shields.io/github/release/skchronicles/pyrkit)](https://github.com/skchronicles/pyrkit/releases) [![Build](https://github.com/skchronicles/pyrkit/workflows/ci/badge.svg)](https://github.com/skchronicles/pyrkit/actions)  [![GitHub issues](https://img.shields.io/github/issues/skchronicles/pyrkit)](https://github.com/skchronicles/pyrkit/issues) [![GitHub license](https://img.shields.io/github/license/skchronicles/pyrkit)](https://github.com/skchronicles/pyrkit/blob/master/LICENSE)  
 
 a tool to archive and co-locate NGS data with project-level, sample-level, and analysis-level metadata.
 
