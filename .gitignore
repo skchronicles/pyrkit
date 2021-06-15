@@ -142,3 +142,6 @@ multiqc_matrix.txt
 # excel2tsv
 sheet_*
 data/sheet_*
+
+# SLURM Logfiles
+slurm-*.out

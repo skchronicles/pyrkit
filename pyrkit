@@ -3,7 +3,7 @@
 # pyrkit: a tool to archive and co-locate NGS data with hierarchical metadata
 set -euo pipefail
 
-VERSION="0.1.0"
+VERSION="1.0.0"
 
 # Functions
 function err() { cat <<< "$@" 1>&2; }
