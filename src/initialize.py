@@ -10,7 +10,7 @@ __author__ = 'Skyler Kuhn'
 config = {
     ".warning": ["\033[93m", "\033[00m"], ".error": ["\033[91m", "\033[00m"],
     ".required": ["data_dictionary.json", "project.json", "sample.json"],
-    ".vaults": ["CCBR_Archive", "CCBR_EXT_Archive"],
+    ".vaults": ["CCBR_Archive", "CCBR_EXT_Archive", "CCR_DTB_Archive"],
     "data_dictionary": {
         "input": "data_dictionary.json",
     },
@@ -373,7 +373,7 @@ def _pi(parsed_data, template, opath, dme_vault, index=0):
     name, aff = dict2list(parsed_data, ["data_owner", "affiliation"], i=index)
     last, first = [n.lstrip().rstrip() for n in name.split(',')]
     aff = aff.split()[-1].replace('(','').replace(')','')
-    collection_name = 'PI_Lab_{}{}_{}'.format(first, last, aff)
+    collection_name = 'PI_Lab_{}{}_{}'.format(first.strip().replace(' ', ''), last.strip().replace(' ', ''), aff)
 
     outfile = os.path.join(opath, '{}.metadata.json'.format(collection_name))
     path_exists(os.path.join(opath, '{}'.format(collection_name)))
