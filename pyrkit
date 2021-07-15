@@ -3,7 +3,7 @@
 # pyrkit: a tool to archive and co-locate NGS data with hierarchical metadata
 set -euo pipefail
 
-VERSION="1.0.0"
+VERSION="1.1.0"
 
 # Functions
 function err() { cat <<< "$@" 1>&2; }
@@ -371,6 +371,90 @@ function _sym_link_tbam(){
 }
 
 
+function _sym_link_cbam(){
+  # Symlinks a Samples Chimeric BAM files into their mock upload sample collection and
+  # generates data-object metadata for DME upload
+  # @INPUT $1 = Input Directory or pipeline working directory (i.e. $INPUT_DIRECTORY)
+  # @INPUT $2 = DME base directory for all intermediate output files (i.e. "$INPUT_DIRECTORY/DME")
+  # @INPUT $3 = DME Vault to push data (i.e. /CCBR_Archive or /CCBR_EXT_Archive)
+  # @INPUT $4 = PATH to pyrkit/src/meta program
+  # @INPUT $5 = Assembly Name (i.e. mm10)
+  # @INPUT $6 = GTF Version (i.e. M21)
+  # @INPUT $7 = Short Analysis ID (i.e. f63-93-b750)
+  # @INPUT $8 = Long Analysis ID (i.e. f63ab9966e22f548934c31172388b750)
+  # @INPUT $9 = DME Primary Analysis Collection Path associated with a sample
+
+  for f in "${1}"/fusions/*.p2.arriba.Aligned.sortedByCoord.out.bam; do
+    # Find a FastQ files mock Sample Collection
+    sample=$(basename "$f" | sed 's/\.p2\.arriba\.Aligned\.sortedByCoord\.out\.bam$//')
+    rawdir=$(ls --color=never -d "${2}"/upload/PI_Lab_*/Project_*/Sample_*_"${sample}")
+    # Create renamed symlinks with assembly, gtf ver and analysis_id
+    ln -s "$f" "${rawdir}/${sample}.${5}_${6}.Aligned.toChimeric.${7}.bam" \
+      || echo "Failed to create symlink for $f and $rawdir";
+    dmepath=$(echo "$rawdir" | sed "s@^${2}/upload@${3%/}@")
+    # Generate dataobject metadata for FastQ files
+    python "${4}" sample -i "$rawdir/${sample}.${5}_${6}.Aligned.toChimeric.${7}.bam" \
+      -o "$dmepath" -s "$sample" -a "${8}" -d "${9}"
+  done
+}
+
+
+function _sym_link_arriba_fusions(){
+  # Symlinks a Samples Arriba's predicted gene fusions into their mock upload sample collection and
+  # generates data-object metadata for DME upload
+  # @INPUT $1 = Input Directory or pipeline working directory (i.e. $INPUT_DIRECTORY)
+  # @INPUT $2 = DME base directory for all intermediate output files (i.e. "$INPUT_DIRECTORY/DME")
+  # @INPUT $3 = DME Vault to push data (i.e. /CCBR_Archive or /CCBR_EXT_Archive)
+  # @INPUT $4 = PATH to pyrkit/src/meta program
+  # @INPUT $5 = Assembly Name (i.e. mm10)
+  # @INPUT $6 = GTF Version (i.e. M21)
+  # @INPUT $7 = Short Analysis ID (i.e. f63-93-b750)
+  # @INPUT $8 = Long Analysis ID (i.e. f63ab9966e22f548934c31172388b750)
+  # @INPUT $9 = DME Primary Analysis Collection Path associated with a sample
+
+  for f in "${1}"/fusions/*_fusions.tsv; do
+    # Find a FastQ files mock Sample Collection
+    sample=$(basename "$f" | sed 's/_fusions\.tsv$//')
+    rawdir=$(ls --color=never -d "${2}"/upload/PI_Lab_*/Project_*/Sample_*_"${sample}")
+    # Create renamed symlinks with assembly, gtf ver and analysis_id
+    ln -s "$f" "${rawdir}/${sample}.${5}_${6}.arriba.fusions.${7}.tsv" \
+      || echo "Failed to create symlink for $f and $rawdir";
+    dmepath=$(echo "$rawdir" | sed "s@^${2}/upload@${3%/}@")
+    # Generate dataobject metadata for FastQ files
+    python "${4}" sample -i "${rawdir}/${sample}.${5}_${6}.arriba.fusions.${7}.tsv" \
+      -o "$dmepath" -s "$sample" -a "${8}" -d "${9}"
+  done
+}
+
+
+function _sym_link_arriba_pdfs(){
+  # Symlinks a Samples Arriba's predicted gene fusions into their mock upload sample collection and
+  # generates data-object metadata for DME upload
+  # @INPUT $1 = Input Directory or pipeline working directory (i.e. $INPUT_DIRECTORY)
+  # @INPUT $2 = DME base directory for all intermediate output files (i.e. "$INPUT_DIRECTORY/DME")
+  # @INPUT $3 = DME Vault to push data (i.e. /CCBR_Archive or /CCBR_EXT_Archive)
+  # @INPUT $4 = PATH to pyrkit/src/meta program
+  # @INPUT $5 = Assembly Name (i.e. mm10)
+  # @INPUT $6 = GTF Version (i.e. M21)
+  # @INPUT $7 = Short Analysis ID (i.e. f63-93-b750)
+  # @INPUT $8 = Long Analysis ID (i.e. f63ab9966e22f548934c31172388b750)
+  # @INPUT $9 = DME Primary Analysis Collection Path associated with a sample
+
+  for f in "${1}"/fusions/*_fusions.arriba.pdf; do
+    # Find a FastQ files mock Sample Collection
+    sample=$(basename "$f" | sed 's/_fusions\.arriba.pdf$//')
+    rawdir=$(ls --color=never -d "${2}"/upload/PI_Lab_*/Project_*/Sample_*_"${sample}")
+    # Create renamed symlinks with assembly, gtf ver and analysis_id
+    ln -s "$f" "${rawdir}/${sample}.${5}_${6}.arriba.fusions.${7}.pdf" \
+      || echo "Failed to create symlink for $f and $rawdir";
+    dmepath=$(echo "$rawdir" | sed "s@^${2}/upload@${3%/}@")
+    # Generate dataobject metadata for FastQ files
+    python "${4}" sample -i "${rawdir}/${sample}.${5}_${6}.arriba.fusions.${7}.pdf" \
+      -o "$dmepath" -s "$sample" -a "${8}" -d "${9}"
+  done
+}
+
+
 function links(){
   # Creates symlinks for files to upload into DME
   # @INPUT $1 = Input Directory or pipeline working directory (i.e. $INPUT_DIRECTORY)
@@ -386,6 +470,9 @@ function links(){
   _sym_link_fastqs "${1}" "${2}" "${3}" "${4}"
   _sym_link_gbam "${1}" "${2}" "${3}" "${4}" "${5}" "${6}" "${7}" "${8}" "${9}"
   _sym_link_tbam "${1}" "${2}" "${3}" "${4}" "${5}" "${6}" "${7}" "${8}" "${9}"
+  _sym_link_cbam "${1}" "${2}" "${3}" "${4}" "${5}" "${6}" "${7}" "${8}" "${9}"
+  _sym_link_arriba_fusions "${1}" "${2}" "${3}" "${4}" "${5}" "${6}" "${7}" "${8}" "${9}"
+  _sym_link_arriba_pdfs "${1}" "${2}" "${3}" "${4}" "${5}" "${6}" "${7}" "${8}" "${9}"
 }
 
 
@@ -395,18 +482,18 @@ function fix(){
 
   for f in "${@}"; do
     paste <(awk -F '\t' -v OFS='\t' '{print $1"|"$2}' $f | sed '1 s/gene_id|GeneName/symbol/') \
-          <(cut -f3- $f) > $f.tmp
+          <(cut -f3- $f) > "$f.tmp"
 
     ( # Remove suffix expected_counts from each sample name
-      head -1 $f.tmp \
+      head -1 "$f.tmp" \
         | tr '\t' '\n' \
         | sed 's/_expected_count$//g' \
         | tr '\n' '\t' \
         | sed 's/.$/\n/';
-      tail -n+2 $f.tmp
-    ) > $f.tmp2
+      tail -n+2 "$f.tmp"
+    ) > "$f.tmp2"
 
-    mv $f.tmp2 $f; rm $f.tmp
+    mv "$f.tmp2" "$f"; rm "$f.tmp"
   done
 
 }
@@ -425,10 +512,17 @@ function multi(){
 
   # Add Counts Matrices (Gene and Isoform Counts), TIN counts, MultiQC Report and TSV, Project Request Spreadsheet
   cp "${1}/DEG_ALL/RSEM.genes.expected_count.all_samples.txt" "${2}/RSEM_genes_expected_counts.tsv"
-  cp "${1}/DEG_ALL/RSEM.isoforms.expected_count.all_samples.txt" "${2}/RSEM_isoforms_expected_counts.tsv"
+  cp "${1}/DEG_ALL/RSEM.isoforms.expected_count.all_samples.txt" "${2}/RSEM_isoforms_expected_counts.tsv" 
+  cp "${1}/DEG_ALL/RSEM.genes.FPKM.all_samples.txt" "${2}/RSEM_genes_FPKM_normalized.tsv"
+  cp "${1}/DEG_ALL/RSEM.isoforms.FPKM.all_samples.txt" "${2}/RSEM_isoforms_FPKM_normalized.tsv"
+  cp "${1}/DEG_ALL/RSEM.genes.TPM.all_samples.txt" "${2}/RSEM_genes_TPM_normalized.tsv"
+  cp "${1}/DEG_ALL/RSEM.isoforms.TPM.all_samples.txt" "${2}/RSEM_isoforms_TPM_normalized.tsv"
 
   # Reformat for downstream analysis and remove suffix expected_counts
-  fix "${2}/RSEM_genes_expected_counts.tsv" "${2}/RSEM_isoforms_expected_counts.tsv"
+  fix "${2}/RSEM_genes_expected_counts.tsv" "${2}/RSEM_isoforms_expected_counts.tsv" \
+    "${2}/RSEM_genes_FPKM_normalized.tsv" "${2}/RSEM_isoforms_FPKM_normalized.tsv" \
+    "${2}/RSEM_genes_TPM_normalized.tsv" "${2}/RSEM_isoforms_TPM_normalized.tsv"
+
 
   # Symlink remaining files to Primary Analysis collection
   mqc_prefix=$(basename "${1}")
