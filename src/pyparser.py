@@ -265,7 +265,7 @@ def isvalid(file):
     # Remove absolute or relateive PATH
     if os.path.basename(file) not in supported:
         cstart, cend = config['.warning']
-        print("{}Warning:{} {} is a not supported file to parse... Skipping over file!".format(cstart, cend, file))
+        print("{}WARNING:{} {} is a not supported file to parse... Skipping over file!".format(cstart, cend, file))
         return False
 
     return True
@@ -282,7 +282,7 @@ def exists(file):
     # File cannot be opened for reading (may not exist) or permissions problem
     except IOError:
         cstart, cend = config['.warning']
-        print("{}Warning:{} Cannot open {}... File may not exist... Skipping over file!".format(cstart, cend, file))
+        print("{}WARNING:{} Cannot open {}... File may not exist... Skipping over file!".format(cstart, cend, file))
         return False
 
     return True
@@ -310,7 +310,7 @@ def column_indexes(line, filename, verbose=True):
         fields_not_found = set(fields2parse) - set(found)
         for field in fields_not_found:
             cstart, cend = config['.warning']
-            print("{}Warning:{} Cannot find expected field '{}' in {}... skipping over parsing that field!".format(cstart, cend, field, filename))
+            print("{}WARNING:{} Cannot find expected field '{}' in {}... skipping over parsing that field!".format(cstart, cend, field, filename))
 
     return indices
 
@@ -384,7 +384,7 @@ def scaled(value, column, filename):
         # Did not typecast value using the config
         # Remove warning by typecasting value as float or int
         cstart, cend = config['.warning']
-        print("{}Warning:{} Attribute {} in {} is NOT defined in config... defaulting to float".format(cstart, cend, column, filename))
+        print("{}WARNING:{} Attribute {} in {} is NOT defined in config... defaulting to float".format(cstart, cend, column, filename))
         if value: # case for when row/column is empty string
             value = float(value) * scaling_unit
             value = round(value, 3)
