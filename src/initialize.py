@@ -371,6 +371,7 @@ def _pi(parsed_data, template, opath, dme_vault, index=0):
 
     # Get name and aff for output
     name, aff = dict2list(parsed_data, ["data_owner", "affiliation"], i=index)
+    template['metadataEntries'].append({'attribute': 'pi_name', 'value': name})
     last, first = [n.lstrip().rstrip() for n in name.split(',')]
     aff = aff.split()[-1].replace('(','').replace(')','')
     collection_name = 'PI_Lab_{}{}_{}'.format(first.strip().replace(' ', ''), last.strip().replace(' ', ''), aff)
