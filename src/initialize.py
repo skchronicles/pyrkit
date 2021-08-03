@@ -423,7 +423,9 @@ def _project(parsed_data, template, opath, dme_vault, pid):
                 collection_name = 'Project_{}_{}_{}{}_{}'.format(poc, origin, nsamples, method, sdate)
 
                 if pid:
+                    # Attribute "project_id" is a required field in DTB vault
                     collection_name = 'Project_{}_{}_{}_{}{}_{}'.format(poc, origin, pid, nsamples, method, sdate)
+                    temp['metadataEntries'].append({'attribute': 'project_id', 'value': pid})
 
                 outfile = os.path.join(opath, '{}.metadata.json'.format(collection_name))
                 path_exists(os.path.join(opath, '{}'.format(collection_name)))
