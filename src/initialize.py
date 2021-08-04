@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function, division
+from datetime import datetime
 import sys, os, json, re
 
 __author__ = 'Skyler Kuhn'
@@ -415,6 +416,7 @@ def _project(parsed_data, template, opath, dme_vault, pid):
             else:
                 # Get dme field names for collection and write output to file
                 poc, origin, nsamples, method, sdate = dict2list(parsed_data, ["contact_name", "origin", "number_of_cases", "method", "project_start_date"], i=i, override_index=["contact_name", "project_start_date"])
+                project_scientist = poc
                 poc = poc.replace(" ","")
                 origin = origin.replace(" ","-")
                 method = method.replace(" ","-")
@@ -426,6 +428,11 @@ def _project(parsed_data, template, opath, dme_vault, pid):
                     # Attribute "project_id" is a required field in DTB vault
                     collection_name = 'Project_{}_{}_{}_{}{}_{}'.format(poc, origin, pid, nsamples, method, sdate)
                     temp['metadataEntries'].append({'attribute': 'project_id', 'value': pid})
+
+                if dme_vault == 'CCR_DTB_Archive':
+                    # Additional required fields for DTB vault
+                    temp['metadataEntries'].append({'attribute': 'project_scientist', 'value': project_scientist})
+                    temp['metadataEntries'].append({'attribute': 'project_completed_date', 'value': datetime.today().strftime('%Y-%m-%d')})
 
                 outfile = os.path.join(opath, '{}.metadata.json'.format(collection_name))
                 path_exists(os.path.join(opath, '{}'.format(collection_name)))
