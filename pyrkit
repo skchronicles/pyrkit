@@ -85,9 +85,9 @@ function retry() {
     "$@" && attempt=false || {
       # Try again up to 5 times 
       if [[ $n -le $max ]]; then
-        echo -e "Command failed: $@"
+        err "[$(timestamp)] Command failed: $@"
         delay=$(( 4**$n ))
-        echo -e "Attempt: ${n}/${max}. Trying again in ${delay} seconds!\n"
+        err "[$(timestamp)] Attempt: ${n}/${max}. Trying again in ${delay} seconds!"
         sleep $delay;
         ((n++))
       else

@@ -1,0 +1,144 @@
+# Modules represent high-level containers for sets of supported 
+# input or output files. Modules encapsulate search patterns for 
+# files to upload along with methods to rename a set of files.
+# Modules can represent a set of output files from a tool or 
+# step in the pipeline to archive. If you wish to add a new 
+# output file or a set of output files, create a new module
+# by adding a new key and defining its type and search 
+# pattern. A module type can take the values of either 
+# 'sample' (for files containing per sample results, ie.
+# fastq files, bam files, per sample log files/counts, etc)
+# or 'combined' (for files containing results for multiple
+# samples, i.e. reports or matrices, etc.)
+module:
+    # DEFINITIONS FOR PER SAMPLE INPUT AND OUTPUT FILES
+    # -------------------------------------------------
+    fastq:
+        # Inputs to pipeline
+        type: 'sample'     # required, either 'sample' or 'combined'
+        search_pattern: 
+            '\.R?\.fastq\.gz$'
+    star_gbam:
+        # STAR Genomic BAM files
+        type: 'sample'     # required, either 'sample' or 'combined'
+        search_pattern:
+            'bams/*\.star_rg_added\.sorted\.dmark\.bam$'
+    star_tbam:
+        # STAR Transcriptomic BAM files
+        type: 'sample'     # required, either 'sample' or 'combined'
+        search_pattern:
+            'bams/*\.p2\.Aligned\.toTranscriptome\.out\.bam$'
+    star_cbam:
+        # STAR Chimeric BAM files
+        type: 'sample'     # required, either 'sample' or 'combined'
+        search_pattern:
+            'fusions/*\.p2\.arriba\.Aligned\.sortedByCoord\.out\.bam$'
+    arriba_fusions:
+        # Arriba predicted fusions
+        type: 'sample'     # required, either 'sample' or 'combined'
+        search_pattern:
+            'fusions/*_fusions\.tsv$'
+    arriba_pdfs:
+        # Arriba PDFs
+        type: 'sample'     # required, either 'sample' or 'combined'
+        search_pattern:
+            'fusions/*_fusions\.arriba\.pdf$'
+    # DEFINITIONS FOR MULTI SAMPLE INPUT AND OUTPUT FILES
+    # ---------------------------------------------------
+    rsem_genes_raw:
+        # RSEM expected gene counts matrix
+        type: 'combined'    # required, either 'sample' or 'combined'
+        search_pattern: 
+            'DEG_ALL/RSEM\.genes\.expected_count\.all_samples\.txt$'
+    rsem_isoforms_raw:
+        # RSEM expected isoform counts matrix
+        type: 'combined'    # required, either 'sample' or 'combined'
+        search_pattern: 
+            'DEG_ALL/RSEM\.isoforms\.expected_count\.all_samples\.txt$'
+    rsem_genes_fpkm:
+        # RSEM FPKM gene counts matrix
+        type: 'combined'    # required, either 'sample' or 'combined'
+        search_pattern:
+             'DEG_ALL/RSEM\.genes\.FPKM\.all_samples\.txt$'
+    rsem_isoform_fpkm:
+        # RSEM FPKM isoform counts matrix
+        type: 'combined'    # required, either 'sample' or 'combined'
+        search_pattern:
+             'DEG_ALL/RSEM\.isoforms\.FPKM\.all_samples\.txt$'
+    rsem_gene_tpm:
+        # RSEM TPM gene counts matrix
+        type: 'combined'    # required, either 'sample' or 'combined'
+        search_pattern:
+            'DEG_ALL/RSEM\.genes\.TPM\.all_samples\.txt$'
+    rsem_isoform_tpm:
+        # RSEM TPM isoform counts matrix
+        type: 'combined'    # required, either 'sample' or 'combined'
+        search_pattern:
+            'DEG_ALL/RSEM\.isoforms\.TPM\.all_samples\.txt$'
+    multiqc_matrix:
+        # MultiQC table
+        type: 'combined'    # required, either 'sample' or 'combined'
+        search_pattern:
+            'multiqc_matrix\.tsv$'
+    multiqc_report:
+        # MultiQC HTML Report
+        type: 'combined'    # required, either 'sample' or 'combined'
+        search_pattern:
+            'Reports/multiqc_report\.html$'
+    rna_report:
+        # rNA Report
+        type: 'combined'    # required, either 'sample' or 'combined'
+        search_pattern:
+            'Reports/RNA_Report\.html$'
+
+# Option to rename a set of output files for a module 
+# defined above. Renaming works like a regex find and
+# replace. The replace statement should be a string
+# litteral and not a regular expression. The add_uuid
+# option within each module will be prefixed to the
+# defined replace definition. This option can be used
+# to aviod collisions when uploading per sample input
+# or output files into object storage where the uuid
+# will constist of the {genome}_{gtf_ver}_{analysis_id}
+rename:
+    star_gbam:
+        add_uuid: true
+        find_replace: 
+            '\.star_rg_added\.sorted\.dmark\.bam$': '.Aligned.toGenome.sorted.dmark.bam'
+    star_tbam:
+        add_uuid: true
+        find_replace:
+            '\.p2\.Aligned\.toTranscriptome\.out\.bam$': '.Aligned.toTranscriptome.bam'
+    star_cbam:
+        add_uuid: true
+        find_replace:
+            '\.p2\.arriba\.Aligned\.sortedByCoord\.out\.bam$': '.Aligned.toChimeric.bam'
+    arriba_fusions:
+        add_uuid: true
+        find_replace:
+            '_fusions\.tsv$': '.arriba.fusions.tsv'
+    arriba_pdfs:
+        add_uuid: true
+        find_replace:
+            '_fusions\.arriba\.pdf$': '.arriba.fusions.pdf'
+    rsem_genes_raw:
+        find_replace:
+            'RSEM\.genes\.expected_count\.all_samples\.txt$': 'RSEM_genes_expected_counts.tsv'
+    rsem_isoforms_raw:
+        find_replace: 
+            'RSEM\.isoforms\.expected_count\.all_samples\.txt$': 'RSEM_isoforms_expected_counts.tsv'
+    rsem_genes_fpkm:
+        find_replace:
+            'RSEM\.genes\.FPKM\.all_samples\.txt$': 'RSEM_genes_FPKM_normalized.tsv'
+    rsem_isoform_fpkm:
+        find_replace:
+             'RSEM\.isoforms\.FPKM\.all_samples\.txt$': 'RSEM_isoforms_FPKM_normalized.tsv'
+    rsem_gene_tpm:
+        find_replace:
+            'RSEM\.genes\.TPM\.all_samples\.txt$': 'RSEM_genes_TPM_normalized.tsv'
+    rsem_isoform_tpm:
+        find_replace:
+            'RSEM\.isoforms\.TPM\.all_samples\.txt$': 'RSEM_isoforms_TPM_normalized.tsv'
+    
+
+
