@@ -1,0 +1,248 @@
+#!/usr/bin/env python3
+# -*- coding: UTF-8 -*-
+
+"""pyrkit: a tool to archive data with structured metadata
+About:
+    This is the main entry for pyrkit cli.
+USAGE:
+	$ pyrkit [OPTIONS]
+Example:
+    $ pyrkit -h
+    $ pyrkit lint -h
+    $ pyrkit extract -h
+    $ pyrkit upload -h
+"""
+
+# Python standard library
+from __future__ import print_function
+from genericpath import isdir
+import sys, os, textwrap, uuid
+
+# 3rd party imports from pypi
+import argparse  # potential python3 3rd party package, added in python/3.5
+
+# Local imports
+from src import version
+from src.arguments import OptionsFormatter
+from src.shells import bash
+from src.utils import (initialize,
+    err,
+    exists,
+    fatal,
+    permissions,
+    require)
+
+__version__ = version
+
+
+def lint(sub_args):
+    """Lints project-level and sample-level metadata template
+    @param sub_args <parser.parse_args() object>:
+        Parsed arguments for run sub-command
+    @return None
+    """
+
+    return
+
+
+def extract(sub_args):
+    """Extracts project-level and sample-level metadata from template
+    @param sub_args <parser.parse_args() object>:
+        Parsed arguments for run sub-command
+    @return None
+    """
+
+    return
+
+
+def upload(sub_args):
+    """Uploads local files into object storage, HPC DME or Box @NIH
+    @param sub_args <parser.parse_args() object>:
+        Parsed arguments for run sub-command
+    @return None
+    """
+    print(sub_args)
+    return
+
+
+
+def parsed_arguments():
+    """Parses user-provided command-line arguments. Requires argparse and textwrap
+    package. argparse was added to standard lib in python 3.5 and textwrap was added
+    in python 3.5. To create custom help formatting for subparsers a docstring is
+    used create the help message for required options. argparse does not support named
+    subparser groups, which is normally what would be used to accomphish this reformatting.
+    As so, the help message for require options must be suppressed. If a new required arg
+    is added to a subparser, it must be added to the docstring and the usage statement
+    also must be updated.
+    """
+
+    # Create a top-level parser
+    parser = argparse.ArgumentParser(description = 'a tool to archive data with structured metadata')
+
+    # Adding Verison information
+    parser.add_argument('--version', action = 'version', version='%(prog)s {}'.format(__version__))
+
+    # Create sub-command parser
+    subparsers = parser.add_subparsers(help='List of available sub-commands')
+
+    # Options for the "upload" sub-command
+    # Grouped sub-parser arguments are currently not supported.
+    # https://bugs.python.org/issue9341
+    # Here is a work around to create more useful help message for named
+    # options that are required! Please note: if a required arg is added the
+    # description below should be updated (i.e. update usage and add new option)
+    required_upload_options = textwrap.dedent("""\
+        Usage: 
+          pyrkit upload [-h] [--dry-run] [-p PROJECT_ID] \\
+                         -i INPUT_DIRECTORY \\
+                         -o OUTPUT_VAULT \\
+                         -r REQUEST_TEMPLATE \\
+                         -m MULTIQC_DIRECTORY \\
+                         -d DME_REPO
+
+          Upload local files into object storage, HPC DME or Box @NIH. The metadata
+        listed in the project request template will be used to create a metadata and
+        file hierarchy within the object storage vault. 
+
+        Required arguments:
+          -i, --input-directory                   INPUT_DIRECTORY
+                                Required local directory containing files (raw data
+                                and output files) to upload into object storage (HPC
+                                DME). This path is the output directory of a pipeline.
+                                Example: -i /data/projects/ccbr123/RNA/
+          -o, --output-vault                      OUTPUT_VAULT
+                                Required vault in HPC DME to upload and archive local
+                                input files and metadata. This vault represents the
+                                root HPC DME path to archive the data located in
+                                --input-directory into object storage. CCBR has two
+                                main vaults: /CCBR_EXT_Archive and /CCBR_Archive.
+                                /CCBR_EXT_Archive is for storing any public data such
+                                as data or results from dbGap, SRA, GEO or EBI.
+                                /CCBR_Archive is for storing any other data such as
+                                data from internal (SF) and external sequencing
+                                providers (NovoGene, GeneDx, Macrogen, Genentech).
+                                Example: -o /CCBR_Archive
+          -r, --request-template                  REQUEST_TEMPLATE
+                                Required Project Request Template. The project request
+                                template is an excel spreadsheet sent out to the
+                                requestor to capture information about a project or
+                                experiment. This excel file is parsed to capture any
+                                required metadata for instantiating a PI-, Project-,
+                                and Sample-level collection hierarchy in HPC DME.
+                                Example: -t experiment_metadata.xlsx
+          -m, --multiqc-directory                 MULTIQC_DIRECTORY
+                                Required MultiQC Output Directory. This directory is
+                                created by MultiQC. It contains several text files
+                                which are generated by MultiQC as it builds the
+                                report. These files are parsed to attach quality-
+                                control metadata to each Sample-level collection.
+                                Example: -m /data/projects/ccbr123/RNA/multiqc_data/
+          -d, --dme-repo                          DME_REPO
+                                Required Path to a HPC DME command line toolkit
+                                installation. This path represents a local path to a
+                                git installation of DME command line interface. The
+                                DME command line toolkit must be installed to archive
+                                data into a vault. If you do not have toolkit
+                                installed, please visit this Getting Started page:
+                                wiki.nci.nih.gov/display/DMEdoc/Getting+Started
+                                Example: -d ~/DME/HPC_DME_APIs/
+        """)
+
+    # Display example usage in epilog
+    upload_epilog = textwrap.dedent("""\
+        Example:
+          # Upload local files into DME
+          ./pyrkit -i /data/ccbr123/ \\
+                   -o /CCBR_Archive \\
+                   -r experiment_metadata.xlsx \\
+                   -m /data/ccbr123//multiqc_data/ \\
+                   -d ~/DME/HPC_DME_APIs/ \\
+                   -p ccbr-123
+
+        Version:
+          {}
+        """.format(__version__))
+
+    # Supressing help message of required args to overcome no sub-parser named groups
+    subparser_upload = subparsers.add_parser('upload',
+        help = 'Upload files and metadata into object storage',
+        add_help = False,
+        usage = argparse.SUPPRESS,
+        formatter_class=OptionsFormatter,
+        description = required_upload_options,
+        epilog = upload_epilog
+    )
+
+    # Required Arguments 
+    subparser_upload.add_argument('-i', '--input-directory',
+      required = True, help = argparse.SUPPRESS,
+      # Check if the file exists and if it is readable
+      type = lambda p: permissions(parser, p, os.R_OK),
+    )
+
+    subparser_upload.add_argument('-o', '--output-vault',
+      required=True, help = argparse.SUPPRESS, type=str
+    )
+
+    subparser_upload.add_argument('-r', '--request-template', 
+      required=True, help = argparse.SUPPRESS, type=str
+    )
+    
+    subparser_upload.add_argument('-m', '--multiqc-directory',
+      required=True, help = argparse.SUPPRESS,
+      # Check if the file exists and if it is readable
+      type = lambda p: permissions(parser, p, os.R_OK)
+    )
+
+    subparser_upload.add_argument('-d', '--dme-repo',
+      required = True, help = argparse.SUPPRESS, 
+      # Check if the file exists and if it is readable
+      type = lambda p: permissions(parser, p, os.R_OK)
+    )
+
+    # Optional arguments
+    subparser_upload.add_argument('-p', '--project-id', type=str,
+      help='Optional Project ID. This is a unique identifer or \
+      alias tied to a request to internally distinguish a project. \
+      This could be a CCBR/NCBR/NAS project ID. Example: -p ccbr-123'
+    )
+
+    subparser_upload.add_argument('-n', '--dry-run', 
+      action = 'store_true', default = 'no',
+      help='Dry-run the entire pyrkit workflow. If this option is \
+      provided all the normal steps of the pyrkit workflow will be \
+      executed but data will NOT be pushed into HPC DME. This is \
+      useful for debugging purposes or if you are not ready to push \
+      everything into HPC DME. Example: --dry-run'
+     )
+
+    subparser_upload.add_argument('-h', '--help', action='help', 
+      default=argparse.SUPPRESS, help='Display help message and exit'
+    )
+
+    # Sanity check for user command line arguments 
+    if len(sys.argv) < 2:
+        parser.error("""\n\t └── Fatal: failed to provide a valid sub command to pyrkit!
+             Please run 'pyrkit -h' to view more information about its correct usage."""
+        )
+
+    # Define handlers for each sub-parser
+    subparser_upload.set_defaults(func = upload)
+
+    # Parse command-line args
+    args = parser.parse_args()
+    return args
+
+
+def main():
+
+    # Collect args for sub-command
+    args = parsed_arguments()
+
+    # Mediator to call sub-command's set handler function
+    args.func(args)
+
+
+if __name__ == '__main__':
+    main()
